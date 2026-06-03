@@ -91,10 +91,15 @@ Instead of commit volume, my focus is on **writing clean, modular code** in mode
 ---
 
 ### 🎮 Anime Battle Arena
-> Pick your fighter and battle! 
+> Pick your fighter and play my custom interactive mini-game directly in your browser!
+
+| 🍥 Naruto | 🏴‍☠️ Luffy | 👁️ Itachi | ⚡ Goku |
+| :---: | :---: | :---: | :---: |
+| **Rasengan Dodge**<br>🌪️ Dodge shurikens | **Gum Gum Punch**<br>🌊 Punch enemies | **Sharingan Aim**<br>🔴 Genjutsu clicks | **Kamehameha Blast**<br>☄️ Charge &amp; fire |
+| [Play Naruto ↗](https://Krati-orbit.github.io/Krati-orbit/game.html?hero=naruto) | [Play Luffy ↗](https://Krati-orbit.github.io/Krati-orbit/game.html?hero=luffy) | [Play Itachi ↗](https://Krati-orbit.github.io/Krati-orbit/game.html?hero=itachi) | [Play Goku ↗](https://Krati-orbit.github.io/Krati-orbit/game.html?hero=goku) |
 
 <p align="center">
-  <a href="https://Krati-orbit.github.io/game.html">
+  <a href="https://Krati-orbit.github.io/Krati-orbit/game.html">
     <img src="https://img.shields.io/badge/▶%20Play%20Now-Anime%20Battle%20Arena-ff6600?style=for-the-badge" alt="Play Now" />
   </a>
 </p>

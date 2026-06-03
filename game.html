@@ -843,6 +843,15 @@
       ctx.textBaseline = 'middle';
       ctx.fillText('⚡', player.x, player.y);
     }
+
+    // Auto-start game if hero parameter is present in URL
+    window.onload = () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const hero = urlParams.get('hero');
+      if (hero && themes[hero]) {
+        startGame(hero);
+      }
+    };
   </script>
 </body>
 </html>

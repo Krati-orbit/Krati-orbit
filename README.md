@@ -90,6 +90,17 @@ Instead of commit volume, my focus is on **writing clean, modular code** in mode
 
 ---
 
+### 🎮 Anime Battle Arena
+> Pick your fighter and battle! 
+
+<p align="center">
+  <a href="https://Krati-orbit.github.io/game.html">
+    <img src="https://img.shields.io/badge/▶%20Play%20Now-Anime%20Battle%20Arena-ff6600?style=for-the-badge" alt="Play Now" />
+  </a>
+</p>
+
+---
+
 ### 🌐 Connect with Me
 
 <p align="center">

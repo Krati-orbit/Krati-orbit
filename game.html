@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Anime Battle Arena - Mini Games</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Outfit', 'sans-serif'],
+            orbitron: ['Orbitron', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: #e5e5e5;
+      overflow-x: hidden;
+    }
+    .neon-orange {
+      box-shadow: 0 0 15px rgba(255, 102, 0, 0.4);
+      border-color: #ff6600;
+    }
+    .neon-orange:hover {
+      box-shadow: 0 0 25px rgba(255, 102, 0, 0.7);
+    }
+    .neon-red {
+      box-shadow: 0 0 15px rgba(255, 34, 34, 0.4);
+      border-color: #ff2222;
+    }
+    .neon-red:hover {
+      box-shadow: 0 0 25px rgba(255, 34, 34, 0.7);
+    }
+    .neon-purple {
+      box-shadow: 0 0 15px rgba(170, 68, 255, 0.4);
+      border-color: #aa44ff;
+    }
+    .neon-purple:hover {
+      box-shadow: 0 0 25px rgba(170, 68, 255, 0.7);
+    }
+    .neon-yellow {
+      box-shadow: 0 0 15px rgba(255, 221, 0, 0.4);
+      border-color: #ffdd00;
+    }
+    .neon-yellow:hover {
+      box-shadow: 0 0 25px rgba(255, 221, 0, 0.7);
+    }
+    canvas {
+      background-color: #111;
+      image-rendering: pixelated;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between items-center p-4">
+
+  <!-- Main Container -->
+  <main class="w-full max-w-md my-auto flex flex-col items-center">
+    
+    <!-- Title Header -->
+    <header class="text-center mb-8" id="menu-header">
+      <h1 class="text-3xl font-orbitron font-extrabold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-purple-500 to-yellow-500">
+        ANIME BATTLE ARENA
+      </h1>
+      <p class="text-xs text-gray-400 font-sans mt-2 tracking-widest uppercase">Pick Your Fighter &amp; Play!</p>
+    </header>
+
+    <!-- Character Selector Grid -->
+    <div id="character-select" class="grid grid-cols-2 gap-4 w-full">
+      <!-- Naruto Card -->
+      <button onclick="startGame('naruto')" class="neon-orange bg-[#121212]/80 border-2 rounded-xl p-5 flex flex-col items-center justify-center transition-all duration-300 transform hover:scale-105 active:scale-95 group">
+        <span class="text-5xl mb-3 group-hover:animate-bounce">🍥</span>
+        <h2 class="font-orbitron font-bold text-[#ff6600]">NARUTO</h2>
+        <span class="text-[10px] text-gray-500 mt-1 uppercase tracking-wider">Rasengan Dodge</span>
+      </button>
+
+      <!-- Luffy Card -->
+      <button onclick="startGame('luffy')" class="neon-red bg-[#121212]/80 border-2 rounded-xl p-5 flex flex-col items-center justify-center transition-all duration-300 transform hover:scale-105 active:scale-95 group">
+        <span class="text-5xl mb-3 group-hover:animate-bounce">🏴‍☠️</span>
+        <h2 class="font-orbitron font-bold text-[#ff2222]">LUFFY</h2>
+        <span class="text-[10px] text-gray-500 mt-1 uppercase tracking-wider">Gum Gum Punch</span>
+      </button>
+
+      <!-- Itachi Card -->
+      <button onclick="startGame('itachi')" class="neon-purple bg-[#121212]/80 border-2 rounded-xl p-5 flex flex-col items-center justify-center transition-all duration-300 transform hover:scale-105 active:scale-95 group">
+        <span class="text-5xl mb-3 group-hover:animate-bounce">👁️</span>
+        <h2 class="font-orbitron font-bold text-[#aa44ff]">ITACHI</h2>
+        <span class="text-[10px] text-gray-500 mt-1 uppercase tracking-wider">Sharingan Aim</span>
+      </button>
+
+      <!-- Goku Card -->
+      <button onclick="startGame('goku')" class="neon-yellow bg-[#121212]/80 border-2 rounded-xl p-5 flex flex-col items-center justify-center transition-all duration-300 transform hover:scale-105 active:scale-95 group">
+        <span class="text-5xl mb-3 group-hover:animate-bounce">⚡</span>
+        <h2 class="font-orbitron font-bold text-[#ffdd00]">GOKU</h2>
+        <span class="text-[10px] text-gray-500 mt-1 uppercase tracking-wider">Kamehameha Blast</span>
+      </button>
+    </div>
+
+    <!-- Active Game Arena (Hidden initially) -->
+    <div id="game-arena" class="hidden w-full flex flex-col items-center">
+      <!-- Game Info Header -->
+      <div class="flex justify-between items-center w-full mb-3 px-2">
+        <button onclick="exitToMenu()" class="text-xs bg-zinc-800 hover:bg-zinc-700 text-gray-300 px-3 py-1.5 rounded-lg border border-zinc-700 transition-colors font-semibold">
+          ← BACK
+        </button>
+        <div class="text-center">
+          <h2 id="arena-title" class="font-orbitron font-bold tracking-wide">FIGHTER</h2>
+          <p id="arena-subtitle" class="text-[10px] text-gray-500 uppercase tracking-widest"></p>
+        </div>
+        <div class="bg-zinc-900 border border-zinc-700 rounded-lg px-3 py-1 text-right min-w-[70px]">
+          <span class="text-[9px] text-gray-400 block leading-none font-bold">SCORE</span>
+          <span id="score-val" class="font-orbitron font-bold text-sm leading-none">0</span>
+        </div>
+      </div>
+
+      <!-- Canvas Frame -->
+      <div id="canvas-container" class="relative border-4 rounded-xl overflow-hidden shadow-2xl bg-black">
+        <canvas id="gameCanvas" width="330" height="200" class="block"></canvas>
+        
+        <!-- Game Over / Start Overlay -->
+        <div id="overlay" class="absolute inset-0 bg-black/85 flex flex-col items-center justify-center hidden p-4 text-center">
+          <h3 id="overlay-title" class="text-xl font-orbitron font-extrabold mb-1">GAME OVER</h3>
+          <p id="overlay-score" class="text-sm text-gray-400 mb-4">Final Score: 0</p>
+          <button id="overlay-btn" onclick="restartCurrentGame()" class="px-5 py-2 rounded-lg font-orbitron font-bold text-sm tracking-wider uppercase transition-all duration-300 transform active:scale-95 shadow-md">
+            TRY AGAIN
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Touch Controls / Help Helper -->
+      <div class="w-full mt-4 bg-zinc-900/60 border border-zinc-800/80 rounded-xl p-3 flex flex-col items-center">
+        <!-- Help Instructions -->
+        <p id="game-instructions" class="text-[11px] text-gray-400 text-center font-medium leading-relaxed mb-3"></p>
+        
+        <!-- Control buttons (Only visible for Naruto / Goku / Luffy when needed) -->
+        <div id="touch-controls" class="flex gap-4 w-full justify-center">
+          <!-- Naruto Left/Right buttons -->
+          <div id="naruto-controls" class="hidden flex gap-8 w-full px-4">
+            <button class="flex-1 py-4 bg-zinc-800 active:bg-[#ff6600]/30 border border-zinc-700 rounded-xl text-xl select-none" touchstart="moveLeft(true)" touchend="moveLeft(false)" mousedown="moveLeft(true)" mouseup="moveLeft(false)">◀ Left</button>
+            <button class="flex-1 py-4 bg-zinc-800 active:bg-[#ff6600]/30 border border-zinc-700 rounded-xl text-xl select-none" touchstart="moveRight(true)" touchend="moveRight(false)" mousedown="moveRight(true)" mouseup="moveRight(false)">Right ▶</button>
+          </div>
+
+          <!-- Luffy Punch Button -->
+          <div id="luffy-controls" class="hidden w-full px-4">
+            <button class="w-full py-4 bg-zinc-800 active:bg-[#ff2222]/30 border border-zinc-700 rounded-xl font-orbitron font-bold text-sm tracking-widest uppercase select-none" onclick="triggerLuffyPunch()">👊 GUM GUM PUNCH!</button>
+          </div>
+
+          <!-- Goku Charge Button -->
+          <div id="goku-controls" class="hidden w-full px-4">
+            <button class="w-full py-4 bg-zinc-800 active:bg-[#ffdd00]/30 border border-zinc-700 rounded-xl font-orbitron font-bold text-sm tracking-widest uppercase select-none" mousedown="startGokuCharge()" mouseup="releaseGokuBlast()" touchstart="startGokuCharge()" touchend="releaseGokuBlast()">⚡ HOLD TO CHARGE KI</button>
+          </div>
+
+          <!-- Itachi has tap directly on target, no buttons needed -->
+          <div id="itachi-controls" class="hidden text-center text-xs text-purple-400 font-bold animate-pulse">
+            🔴 TAP DIRECTLY ON ENEMIES TO CAST GENJUTSU!
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer Info -->
+  <footer class="text-center text-[10px] text-gray-600 mt-8 font-sans">
+    © 2026 Krati Verma | Designed with Antigravity
+  </footer>
+
+  <!-- Script Game Logic -->
+  <script>
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+    
+    // UI Elements
+    const selectScreen = document.getElementById('character-select');
+    const arenaScreen = document.getElementById('game-arena');
+    const menuHeader = document.getElementById('menu-header');
+    const arenaTitle = document.getElementById('arena-title');
+    const arenaSubtitle = document.getElementById('arena-subtitle');
+    const scoreVal = document.getElementById('score-val');
+    const instructionsText = document.getElementById('game-instructions');
+    
+    const overlay = document.getElementById('overlay');
+    const overlayTitle = document.getElementById('overlay-title');
+    const overlayScore = document.getElementById('overlay-score');
+    const overlayBtn = document.getElementById('overlay-btn');
+    const container = document.getElementById('canvas-container');
+
+    const narutoUI = document.getElementById('naruto-controls');
+    const luffyUI = document.getElementById('luffy-controls');
+    const gokuUI = document.getElementById('goku-controls');
+    const itachiUI = document.getElementById('itachi-controls');
+
+    let currentGameType = '';
+    let score = 0;
+    let gameOver = false;
+    let gameLoopId = null;
+
+    // Theme Configs
+    const themes = {
+      naruto: { title: 'NARUTO', sub: 'Rasengan Dodge', color: '#ff6600', text: '🍥', class: 'neon-orange', instr: '🍥 Move Naruto left or right to dodge the falling shurikens (🌪️). On desktop, use Left/Right Arrow keys. On mobile, tap the buttons below.' },
+      luffy: { title: 'LUFFY', sub: 'Gum Gum Punch', color: '#ff2222', text: '🏴‍☠️', class: 'neon-red', instr: '👊 Tap the button below (or spacebar/click canvas on desktop) to throw a stretching punch. Hit the incoming enemies (🌊) before they reach the left side!' },
+      itachi: { title: 'ITACHI', sub: 'Sharingan Aim', color: '#aa44ff', text: '👁️', class: 'neon-purple', instr: '👁️ Click or tap directly on the purple target entities (🔴/👁️) before their timers run out to vanquish them with Genjutsu!' },
+      goku: { title: 'GOKU', sub: 'Kamehameha Blast', color: '#ffdd00', text: '⚡', class: 'neon-yellow', instr: '⚡ Hold the button below (or Space/Click on desktop) to charge Ki (🔥). Release it to unleash a Kamehameha Blast (☄️) and vaporize incoming meteors!' }
+    };
+
+    // Keyboard state
+    const keys = {};
+    window.addEventListener('keydown', e => keys[e.code] = true);
+    window.addEventListener('keyup', e => keys[e.code] = false);
+
+    // Global Event Listeners for controls
+    // Add canvas tap listeners for specific games
+    canvas.addEventListener('mousedown', e => handleCanvasClick(e, false));
+    canvas.addEventListener('touchstart', e => handleCanvasClick(e, true));
+
+    function handleCanvasClick(e, isTouch) {
+      if (gameOver) return;
+      const rect = canvas.getBoundingClientRect();
+      const clientX = isTouch ? e.touches[0].clientX : e.clientX;
+      const clientY = isTouch ? e.touches[0].clientY : e.clientY;
+      const clickX = ((clientX - rect.left) / rect.width) * canvas.width;
+      const clickY = ((clientY - rect.top) / rect.height) * canvas.height;
+
+      if (currentGameType === 'itachi') {
+        // Itachi aims by clicking
+        checkItachiClick(clickX, clickY);
+      } else if (currentGameType === 'luffy') {
+        triggerLuffyPunch();
+      } else if (currentGameType === 'goku') {
+        startGokuCharge();
+      }
+    }
+
+    // Naruto Movement triggers via click/touch
+    let moveLeftActive = false;
+    let moveRightActive = false;
+    function moveLeft(active) { moveLeftActive = active; }
+    function moveRight(active) { moveRightActive = active; }
+
+    // Luffy punch trigger
+    function triggerLuffyPunch() {
+      if (currentGameType === 'luffy' && !luffyGameData.punch.active && !gameOver) {
+        luffyGameData.punch.active = true;
+        luffyGameData.punch.x = luffyGameData.player.x;
+        luffyGameData.punch.extending = true;
+      }
+    }
+
+    // Goku charge trigger
+    function startGokuCharge() {
+      if (currentGameType === 'goku' && !gameOver && !gokuGameData.beam.active) {
+        gokuGameData.charging = true;
+      }
+    }
+    function releaseGokuBlast() {
+      if (currentGameType === 'goku' && gokuGameData.charging && !gameOver) {
+        gokuGameData.charging = false;
+        if (gokuGameData.chargePower >= 20) {
+          gokuGameData.beam.active = true;
+          gokuGameData.beam.timer = 20; // beam lasts 20 frames
+          gokuGameData.beam.y = gokuGameData.player.y;
+          gokuGameData.beam.height = 15 + (gokuGameData.chargePower * 0.45); // width of beam depends on charge
+          gokuGameData.chargePower = 0;
+        } else {
+          gokuGameData.chargePower = 0;
+        }
+      }
+    }
+
+    // Fallbacks for desktop click-release for Goku
+    window.addEventListener('mouseup', () => {
+      if (currentGameType === 'goku' && gokuGameData.charging) releaseGokuBlast();
+    });
+    window.addEventListener('touchend', () => {
+      if (currentGameType === 'goku' && gokuGameData.charging) releaseGokuBlast();
+    });
+
+    // Spacebar mapping to actions
+    window.addEventListener('keydown', e => {
+      if (e.code === 'Space') {
+        e.preventDefault();
+        if (currentGameType === 'luffy') triggerLuffyPunch();
+        if (currentGameType === 'goku') startGokuCharge();
+      }
+    });
+    window.addEventListener('keyup', e => {
+      if (e.code === 'Space') {
+        if (currentGameType === 'goku') releaseGokuBlast();
+      }
+    });
+
+    // ==========================================
+    // GAME CORE DATA STRUCTURES
+    // ==========================================
+    let narutoGameData = {};
+    let luffyGameData = {};
+    let itachiGameData = {};
+    let gokuGameData = {};
+
+    function initGameData(type) {
+      score = 0;
+      scoreVal.innerText = score;
+      gameOver = false;
+      overlay.classList.add('hidden');
+
+      if (type === 'naruto') {
+        narutoGameData = {
+          player: { x: 150, y: 165, size: 24, speed: 5 },
+          shurikens: [],
+          spawnTimer: 0
+        };
+      } else if (type === 'luffy') {
+        luffyGameData = {
+          player: { x: 30, y: 100, size: 26 },
+          punch: { active: false, x: 30, y: 100, extending: true, speed: 12, maxRange: 280 },
+          enemies: [],
+          spawnTimer: 0
+        };
+      } else if (type === 'itachi') {
+        itachiGameData = {
+          targets: [],
+          spawnTimer: 0,
+          maxLifeTime: 140, // frames to hit a target
+          feathers: []
+        };
+        // Spawn first target instantly
+        spawnItachiTarget();
+      } else if (type === 'goku') {
+        gokuGameData = {
+          player: { x: 35, y: 100, size: 26 },
+          charging: false,
+          chargePower: 0,
+          beam: { active: false, timer: 0, y: 100, height: 10 },
+          enemies: [],
+          spawnTimer: 0
+        };
+      }
+    }
+
+    // ==========================================
+    // ITACHI CLICK CHECKER
+    // ==========================================
+    function checkItachiClick(cx, cy) {
+      if (currentGameType !== 'itachi') return;
+      
+      let hit = false;
+      itachiGameData.targets = itachiGameData.targets.filter(t => {
+        const dist = Math.hypot(t.x - cx, t.y - cy);
+        if (dist <= t.size + 12) {
+          hit = true;
+          // Spawn feathers particles
+          for (let i = 0; i < 8; i++) {
+            itachiGameData.feathers.push({
+              x: t.x,
+              y: t.y,
+              vx: (Math.random() - 0.5) * 4,
+              vy: (Math.random() - 0.5) * 4 - 2,
+              alpha: 1
+            });
+          }
+          score++;
+          scoreVal.innerText = score;
+          return false;
+        }
+        return true;
+      });
+
+      if (hit) {
+        // Boost target spawn timer
+        itachiGameData.spawnTimer = Math.max(itachiGameData.spawnTimer, 40);
+      }
+    }
+
+    function spawnItachiTarget() {
+      const margin = 35;
+      const tx = margin + Math.random() * (canvas.width - margin * 2);
+      const ty = margin + Math.random() * (canvas.height - margin * 2 - 20);
+      const size = 18 - Math.min(score * 0.15, 6); // gets smaller as score rises
+      const lifetime = Math.max(itachiGameData.maxLifeTime - score * 2.5, 50); // gets faster
+      
+      itachiGameData.targets.push({
+        x: tx,
+        y: ty,
+        size: size,
+        timer: lifetime,
+        maxTimer: lifetime
+      });
+    }
+
+    // ==========================================
+    // MENU CONTROLS
+    // ==========================================
+    function startGame(type) {
+      currentGameType = type;
+      const theme = themes[type];
+
+      // Setup UI details
+      arenaTitle.innerText = theme.title;
+      arenaTitle.style.color = theme.color;
+      arenaSubtitle.innerText = theme.sub;
+      instructionsText.innerText = theme.instr;
+
+      // Set colors
+      container.className = `relative border-4 rounded-xl overflow-hidden shadow-2xl bg-black ${theme.class}`;
+      overlayBtn.style.backgroundColor = theme.color;
+      overlayBtn.style.color = type === 'goku' ? '#000' : '#fff';
+      overlayTitle.style.color = theme.color;
+
+      // Toggle panels
+      selectScreen.classList.add('hidden');
+      menuHeader.classList.add('hidden');
+      arenaScreen.classList.remove('hidden');
+
+      // Hide all controls UI, display current
+      narutoUI.classList.add('hidden');
+      luffyUI.classList.add('hidden');
+      gokuUI.classList.add('hidden');
+      itachiUI.classList.add('hidden');
+
+      if (type === 'naruto') narutoUI.classList.remove('hidden');
+      else if (type === 'luffy') luffyUI.classList.remove('hidden');
+      else if (type === 'goku') gokuUI.classList.remove('hidden');
+      else if (type === 'itachi') itachiUI.classList.remove('hidden');
+
+      initGameData(type);
+
+      // Start loop
+      if (gameLoopId) cancelAnimationFrame(gameLoopId);
+      gameLoopId = requestAnimationFrame(update);
+    }
+
+    function exitToMenu() {
+      if (gameLoopId) cancelAnimationFrame(gameLoopId);
+      arenaScreen.classList.add('hidden');
+      selectScreen.classList.remove('hidden');
+      menuHeader.classList.remove('hidden');
+      currentGameType = '';
+    }
+
+    function restartCurrentGame() {
+      initGameData(currentGameType);
+      gameLoopId = requestAnimationFrame(update);
+    }
+
+    function triggerGameOver() {
+      gameOver = true;
+      overlayTitle.innerText = "GAME OVER";
+      overlayScore.innerText = `Final Score: ${score}`;
+      overlay.classList.remove('hidden');
+      if (gameLoopId) cancelAnimationFrame(gameLoopId);
+    }
+
+    // ==========================================
+    // MAIN GAME LOOP (UPDATES & RENDERS)
+    // ==========================================
+    function update() {
+      if (gameOver) return;
+
+      // Clear Canvas
+      ctx.fillStyle = '#0a0d0b';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Render Matrix Grid Elements subtly in background
+      ctx.strokeStyle = 'rgba(0, 255, 102, 0.03)';
+      ctx.lineWidth = 1;
+      for (let i = 0; i < canvas.width; i += 20) {
+        ctx.beginPath();
+        ctx.moveTo(i, 0);
+        ctx.lineTo(i, canvas.height);
+        ctx.stroke();
+      }
+      for (let j = 0; j < canvas.height; j += 20) {
+        ctx.beginPath();
+        ctx.moveTo(0, j);
+        ctx.lineTo(canvas.width, j);
+        ctx.stroke();
+      }
+
+      // Route Game Calculations & Renderings
+      if (currentGameType === 'naruto') {
+        updateNaruto();
+      } else if (currentGameType === 'luffy') {
+        updateLuffy();
+      } else if (currentGameType === 'itachi') {
+        updateItachi();
+      } else if (currentGameType === 'goku') {
+        updateGoku();
+      }
+
+      gameLoopId = requestAnimationFrame(update);
+    }
+
+    // ==========================================
+    // 1. NARUTO GAME IMPLEMENTATION
+    // ==========================================
+    function updateNaruto() {
+      const data = narutoGameData;
+      const player = data.player;
+
+      // Player Movement (Arrows or Buttons)
+      if (keys['ArrowLeft'] || moveLeftActive) {
+        player.x -= player.speed;
+      }
+      if (keys['ArrowRight'] || moveRightActive) {
+        player.x += player.speed;
+      }
+
+      // Screen containment
+      player.x = Math.max(player.size / 2, Math.min(canvas.width - player.size / 2, player.x));
+
+      // Spawn falling shurikens
+      data.spawnTimer++;
+      const spawnInterval = Math.max(35 - Math.floor(score / 5), 12);
+      if (data.spawnTimer >= spawnInterval) {
+        data.spawnTimer = 0;
+        data.shurikens.push({
+          x: Math.random() * (canvas.width - 20) + 10,
+          y: -20,
+          size: 16,
+          speed: 2.2 + Math.random() * 2 + (score * 0.1)
+        });
+      }
+
+      // Update shurikens
+      data.shurikens = data.shurikens.filter(s => {
+        s.y += s.speed;
+
+        // Draw Shuriken
+        ctx.save();
+        ctx.translate(s.x, s.y);
+        ctx.rotate(Date.now() * 0.015);
+        ctx.font = `${s.size}px monospace`;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('🌪️', 0, 0);
+        ctx.restore();
+
+        // Collision check
+        const dist = Math.hypot(player.x - s.x, player.y - s.y);
+        if (dist < (player.size / 2 + s.size / 2 - 2)) {
+          triggerGameOver();
+        }
+
+        // Out of bounds check
+        if (s.y > canvas.height + 20) {
+          score++;
+          scoreVal.innerText = score;
+          return false;
+        }
+        return true;
+      });
+
+      // Draw Player (Naruto 🍥)
+      ctx.font = `${player.size}px sans-serif`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      // Rotate rasengan effect slightly
+      ctx.save();
+      ctx.translate(player.x, player.y);
+      ctx.fillText('🍥', 0, 0);
+      
+      // Draw a subtle blue chakra circle behind Naruto
+      ctx.beginPath();
+      ctx.arc(0, 0, player.size/1.5, 0, Math.PI * 2);
+      ctx.strokeStyle = 'rgba(88, 166, 255, 0.4)';
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    // ==========================================
+    // 2. LUFFY GAME IMPLEMENTATION
+    // ==========================================
+    function updateLuffy() {
+      const data = luffyGameData;
+      const player = data.player;
+      const punch = data.punch;
+
+      // Spawn enemies
+      data.spawnTimer++;
+      const spawnInterval = Math.max(50 - Math.floor(score / 3), 20);
+      if (data.spawnTimer >= spawnInterval) {
+        data.spawnTimer = 0;
+        data.enemies.push({
+          x: canvas.width + 20,
+          y: 35 + Math.random() * (canvas.height - 70),
+          size: 20,
+          speed: 1.2 + Math.random() * 1.5 + (score * 0.08)
+        });
+      }
+
+      // Update punch
+      if (punch.active) {
+        if (punch.extending) {
+          punch.x += punch.speed;
+          if (punch.x >= punch.maxRange) {
+            punch.extending = false;
+          }
+        } else {
+          punch.x -= punch.speed;
+          if (punch.x <= player.x) {
+            punch.active = false;
+          }
+        }
+
+        // Draw arm stretching line
+        ctx.strokeStyle = '#f87171'; // luffy's skin-red arm color
+        ctx.lineWidth = 6;
+        ctx.beginPath();
+        ctx.moveTo(player.x, player.y);
+        ctx.lineTo(punch.x, punch.y);
+        ctx.stroke();
+
+        // Draw punching fist 👊
+        ctx.font = '22px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('👊', punch.x, punch.y);
+      }
+
+      // Update enemies
+      data.enemies = data.enemies.filter(e => {
+        e.x -= e.speed;
+
+        // Draw Enemy (Water waves/Ships 🌊)
+        ctx.font = '20px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('🌊', e.x, e.y);
+
+        // Check reach left boundary (Defeat)
+        if (e.x <= 50) {
+          triggerGameOver();
+          return false;
+        }
+
+        // Punch collision check
+        if (punch.active) {
+          const punchDist = Math.hypot(punch.x - e.x, punch.y - e.y);
+          if (punchDist < (15 + e.size / 2)) {
+            // Destroy enemy
+            score++;
+            scoreVal.innerText = score;
+            
+            // Draw hit impact explosion
+            ctx.font = '28px sans-serif';
+            ctx.fillText('💥', e.x, e.y);
+            return false;
+          }
+        }
+        return true;
+      });
+
+      // Draw Player (Luffy 🏴‍☠️)
+      ctx.font = `${player.size}px sans-serif`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('🏴‍☠️', player.x, player.y);
+    }
+
+    // ==========================================
+    // 3. ITACHI GAME IMPLEMENTATION
+    // ==========================================
+    function updateItachi() {
+      const data = itachiGameData;
+
+      // Spawn target circles periodically
+      data.spawnTimer++;
+      const spawnInterval = Math.max(60 - Math.floor(score * 1.5), 25);
+      if (data.spawnTimer >= spawnInterval) {
+        data.spawnTimer = 0;
+        spawnItachiTarget();
+      }
+
+      // Update targets
+      data.targets = data.targets.filter(t => {
+        t.timer--;
+
+        // Game over if timer runs out
+        if (t.timer <= 0) {
+          triggerGameOver();
+          return false;
+        }
+
+        // Draw target circle glowing aura
+        ctx.beginPath();
+        ctx.arc(t.x, t.y, t.size + 10, 0, Math.PI * 2);
+        ctx.strokeStyle = `rgba(170, 68, 255, ${t.timer / t.maxTimer})`;
+        ctx.lineWidth = 2.5;
+        ctx.stroke();
+
+        // Draw inner target Sharingan eye 🔴 or 👁️
+        ctx.font = `${t.size + 12}px sans-serif`;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(score % 2 === 0 ? '🔴' : '👁️', t.x, t.y);
+
+        // Draw timer bar above the eye
+        const barWidth = t.size * 2;
+        const progress = (t.timer / t.maxTimer) * barWidth;
+        ctx.fillStyle = '#aa44ff';
+        ctx.fillRect(t.x - barWidth / 2, t.y - t.size - 12, progress, 3);
+        ctx.strokeStyle = '#30363d';
+        ctx.strokeRect(t.x - barWidth / 2, t.y - t.size - 12, barWidth, 3);
+
+        return true;
+      });
+
+      // Update and draw feather particles
+      data.feathers = data.feathers.filter(f => {
+        f.x += f.vx;
+        f.y += f.vy;
+        f.vy += 0.05; // gravity
+        f.alpha -= 0.015;
+
+        if (f.alpha <= 0) return false;
+
+        ctx.save();
+        ctx.globalAlpha = f.alpha;
+        ctx.font = '12px sans-serif';
+        ctx.fillText('🪶', f.x, f.y);
+        ctx.restore();
+        return true;
+      });
+
+      // Draw Itachi at center bottom subtly
+      ctx.font = '24px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'bottom';
+      ctx.fillText('👁️‍🗨️', canvas.width / 2, canvas.height - 5);
+    }
+
+    // ==========================================
+    // 4. GOKU GAME IMPLEMENTATION
+    // ==========================================
+    function updateGoku() {
+      const data = gokuGameData;
+      const player = data.player;
+
+      // Handle Goku Ki Charging
+      if (data.charging) {
+        data.chargePower = Math.min(data.chargePower + 2, 100);
+        
+        // Draw energy aura
+        const auraRadius = player.size + (data.chargePower * 0.35);
+        const grad = ctx.createRadialGradient(player.x, player.y, 10, player.x, player.y, auraRadius);
+        grad.addColorStop(0, 'rgba(255, 221, 0, 0.7)');
+        grad.addColorStop(0.5, 'rgba(255, 120, 0, 0.3)');
+        grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+        
+        ctx.fillStyle = grad;
+        ctx.beginPath();
+        ctx.arc(player.x, player.y, auraRadius, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Draw Ki particles 🔥 rising
+        ctx.font = '14px sans-serif';
+        ctx.fillText('🔥', player.x + (Math.random() - 0.5) * 30, player.y - 10 - Math.random() * 20);
+      }
+
+      // Update & Draw Kamehameha Beam
+      if (data.beam.active) {
+        data.beam.timer--;
+        if (data.beam.timer <= 0) {
+          data.beam.active = false;
+        }
+
+        // Draw laser blast wave
+        ctx.save();
+        ctx.shadowColor = '#ffdd00';
+        ctx.shadowBlur = 20;
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(player.x + 15, data.beam.y - data.beam.height / 2, canvas.width, data.beam.height);
+        
+        // Outer blast wave (yellow)
+        ctx.strokeStyle = '#ffdd00';
+        ctx.lineWidth = 6;
+        ctx.strokeRect(player.x + 15, data.beam.y - data.beam.height / 2 - 3, canvas.width, data.beam.height + 6);
+        ctx.restore();
+
+        // Draw fire energy elements at Goku's hands
+        ctx.font = '36px sans-serif';
+        ctx.fillText('💛', player.x + 20, data.beam.y);
+      }
+
+      // Spawn meteors / enemies
+      data.spawnTimer++;
+      const spawnInterval = Math.max(45 - Math.floor(score / 4), 16);
+      if (data.spawnTimer >= spawnInterval) {
+        data.spawnTimer = 0;
+        data.enemies.push({
+          x: canvas.width + 20,
+          y: 35 + Math.random() * (canvas.height - 70),
+          size: 22,
+          speed: 1.5 + Math.random() * 1.5 + (score * 0.1)
+        });
+      }
+
+      // Update enemies (meteors)
+      data.enemies = data.enemies.filter(e => {
+        e.x -= e.speed;
+
+        // Draw Meteor ☄️
+        ctx.font = '22px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('☄️', e.x, e.y);
+
+        // Check reach left (Defeat)
+        if (e.x <= 50) {
+          triggerGameOver();
+          return false;
+        }
+
+        // Beam collision check
+        if (data.beam.active) {
+          // If meteor falls within the Y-range of the Kamehameha beam
+          if (e.y >= data.beam.y - data.beam.height / 2 - 12 && e.y <= data.beam.y + data.beam.height / 2 + 12) {
+            score++;
+            scoreVal.innerText = score;
+            // Draw explosion
+            ctx.font = '30px sans-serif';
+            ctx.fillText('💥', e.x, e.y);
+            return false;
+          }
+        }
+        return true;
+      });
+
+      // Draw Goku (⚡)
+      ctx.font = `${player.size}px sans-serif`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('⚡', player.x, player.y);
+    }
+  </script>
+</body>
+</html>

@@ -76,7 +76,7 @@ Highlighting my actual code and live deployments so you can see my work directly
 Instead of commit volume, my focus is on **writing clean, modular code** in modern web frameworks:
 
 <p align="center">
-  <img src="https://github-readme-stats.shion.dev/api/top-langs/?username=Krati-orbit&theme=dark&hide_border=false&include_all_commits=true&count_private=true&layout=compact" alt="Top Languages" width="360" />
+  <img src="https://github-readme-stats.shion.dev/api/top-langs/?username=Krati-orbit&theme=dark&hide_border=false&include_all_commits=true&count_private=true&layout=compact&hide=html,css" alt="Top Languages" width="360" />
   &nbsp;&nbsp;
   <img src="https://github-profile-trophy.vercel.app/?username=Krati-orbit&theme=onedark&column=3&margin-w=10&margin-h=10&no-bg=true" alt="Trophies" width="380" />
 </p>

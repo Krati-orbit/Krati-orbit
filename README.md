@@ -16,6 +16,7 @@
       <ul>
         <li>🥇 <strong>Hackathon Winner</strong>: Regularly participate in and win hackathons, successfully shipping functional prototypes under strict time constraints.</li>
         <li>🤝 <strong>Agile Team Player</strong>: Experienced in working in cross-functional developer teams, utilizing Git collaboration workflows, branch management, and peer PR reviews.</li>
+        <li>🛡️ <strong>Cybersecurity Enthusiast</strong>: Familiar with network security fundamentals, traffic monitoring using Wireshark, network topology simulation via Cisco Packet Tracer, and working with secure Linux configurations.</li>
         <li>🎓 <strong>B.Tech CSE Student</strong>: Building real-world web apps, exploring advanced backend APIs, and web application security.</li>
       </ul>
     </td>
@@ -33,13 +34,13 @@ To keep my profile clean and high-impact, here are the core technologies I speci
 
 <table>
   <tr>
-    <td valign="top" width="33%">
+    <td valign="top" width="25%">
       <h4>💻 Languages</h4>
       <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=flat-square&logo=javascript&logoColor=%23F7DF1E" alt="JS" /><br/>
       <img src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=flat-square&logo=typescript&logoColor=white" alt="TS" /><br/>
       <img src="https://img.shields.io/badge/python-3670A0?style=flat-square&logo=python&logoColor=ffdd54" alt="Python" />
     </td>
-    <td valign="top" width="33%">
+    <td valign="top" width="25%">
       <h4>🎨 Frontend</h4>
       <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=flat-square&logo=html5&logoColor=white" alt="HTML5" /><br/>
       <img src="https://img.shields.io/badge/css3-%231572B6.svg?style=flat-square&logo=css3&logoColor=white" alt="CSS3" /><br/>
@@ -47,13 +48,19 @@ To keep my profile clean and high-impact, here are the core technologies I speci
       <img src="https://img.shields.io/badge/next.js-%23000000.svg?style=flat-square&logo=nextdotjs&logoColor=white" alt="Next.js" /><br/>
       <img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=flat-square&logo=tailwind-css&logoColor=white" alt="TailwindCSS" />
     </td>
-    <td valign="top" width="33%">
+    <td valign="top" width="25%">
       <h4>⚙️ Backend & Tools</h4>
       <img src="https://img.shields.io/badge/firebase-%23039BE5.svg?style=flat-square&logo=firebase&logoColor=ffcd34" alt="Firebase" /><br/>
       <img src="https://img.shields.io/badge/git-%23F05033.svg?style=flat-square&logo=git&logoColor=white" alt="Git" /><br/>
       <img src="https://img.shields.io/badge/github-%23121011.svg?style=flat-square&logo=github&logoColor=white" alt="GitHub" /><br/>
       <img src="https://img.shields.io/badge/figma-%23F24E1E.svg?style=flat-square&logo=figma&logoColor=white" alt="Figma" /><br/>
       <img src="https://img.shields.io/badge/vercel-%23000000.svg?style=flat-square&logo=vercel&logoColor=white" alt="Vercel" />
+    </td>
+    <td valign="top" width="25%">
+      <h4>🛡️ Cyber & OS</h4>
+      <img src="https://img.shields.io/badge/linux-%23FCC624.svg?style=flat-square&logo=linux&logoColor=black" alt="Linux" /><br/>
+      <img src="https://img.shields.io/badge/cisco-%2312A5F4.svg?style=flat-square&logo=cisco&logoColor=white" alt="Cisco" /><br/>
+      <img src="https://img.shields.io/badge/Wireshark-%23167EBA.svg?style=flat-square&logo=wireshark&logoColor=white" alt="Wireshark" />
     </td>
   </tr>
 </table>

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Profile README - Live Preview</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            outfit: ['Outfit', 'sans-serif'],
+          },
+          colors: {
+            github: {
+              dark: '#0d1117',
+              border: '#30363d',
+              card: '#161b22',
+              text: '#c9d1d9',
+              accent: '#58a6ff',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background: radial-gradient(circle at 50% 50%, #1a202c 0%, #0d1117 100%);
+    }
+    .glass-card {
+      background: rgba(22, 27, 34, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(48, 54, 61, 0.6);
+    }
+    .badge-hover:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(88, 166, 255, 0.2);
+    }
+  </style>
+</head>
+<body class="text-github-text min-h-screen py-10 px-4 font-sans antialiased">
+
+  <div class="max-w-4xl mx-auto">
+    <!-- Header Controls -->
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 pb-6 border-b border-github-border gap-4">
+      <div>
+        <h1 class="text-3xl font-outfit font-bold text-white tracking-wide">✨ Profile Preview</h1>
+        <p class="text-sm text-gray-400 mt-1">Interactive local view of your custom GitHub README</p>
+      </div>
+      <div class="flex items-center gap-3">
+        <button onclick="copyReadme()" class="px-5 py-2.5 bg-github-accent hover:bg-blue-400 text-github-dark font-semibold rounded-lg shadow-md transition-all duration-300 transform hover:scale-[1.02] flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path>
+          </svg>
+          Copy README Markdown
+        </button>
+      </div>
+    </div>
+
+    <!-- Notification Alert -->
+    <div id="toast" class="fixed top-5 right-5 bg-emerald-500 text-white px-6 py-3 rounded-lg shadow-xl font-medium transform translate-y-[-100px] opacity-0 transition-all duration-300 z-50 flex items-center gap-2">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+      README copied to clipboard!
+    </div>
+
+    <!-- GitHub Container -->
+    <div class="glass-card rounded-xl overflow-hidden shadow-2xl p-6 sm:p-8 transition-all duration-300 hover:shadow-cyan-950/20">
+      
+      <!-- Greeting Header -->
+      <div class="text-center mb-8">
+        <h2 class="text-3xl sm:text-4xl font-outfit font-extrabold text-white mb-2">Hi there, I'm Krati Verma! 👋</h2>
+        <div class="inline-block mt-2">
+          <img src="https://readme-typing-svg.demolab.com?font=Outfit&weight=600&size=22&pause=1000&color=F7DF1E&center=true&vCenter=true&width=435&lines=Computer+Science+Student;Full-Stack+Web+Developer;Problem+Solver" alt="Typing SVG" class="mx-auto" />
+        </div>
+      </div>
+
+      <hr class="border-github-border my-6">
+
+      <!-- About Me & Matrix Side-by-Side Section -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-10 items-center">
+        <!-- Text Left Column -->
+        <div class="md:col-span-7">
+          <h3 class="text-xl font-outfit font-semibold text-white mb-4 flex items-center gap-2">
+            <span>🚀</span> About Me
+          </h3>
+          <p class="text-base text-gray-300 leading-relaxed mb-6">
+            I am a 3rd-year <strong>Computer Science and Engineering</strong> student at <strong>Sharda University Agra</strong>, passionate about <strong>Full-Stack Web Development</strong>. I bridge the gap between visually appealing, responsive interfaces and reliable, high-performance backend systems.
+          </p>
+          
+          <div class="space-y-4">
+            <div class="bg-github-card p-4 rounded-lg border border-github-border/60 hover:border-github-accent/40 transition-colors duration-300 flex items-start gap-3">
+              <span class="text-2xl mt-0.5">🥇</span>
+              <div>
+                <h4 class="text-sm font-semibold text-white">Hackathon Winner</h4>
+                <p class="text-xs text-gray-400 mt-0.5">Regularly participate in and win hackathons, successfully shipping functional prototypes under strict time constraints.</p>
+              </div>
+            </div>
+            <div class="bg-github-card p-4 rounded-lg border border-github-border/60 hover:border-github-accent/40 transition-colors duration-300 flex items-start gap-3">
+              <span class="text-2xl mt-0.5">🤝</span>
+              <div>
+                <h4 class="text-sm font-semibold text-white">Agile Team Player</h4>
+                <p class="text-xs text-gray-400 mt-0.5">Experienced in working in cross-functional developer teams, utilizing Git collaboration workflows, branch management, and peer PR reviews.</p>
+              </div>
+            </div>
+            <div class="bg-github-card p-4 rounded-lg border border-github-border/60 hover:border-github-accent/40 transition-colors duration-300 flex items-start gap-3">
+              <span class="text-2xl mt-0.5">🎓</span>
+              <div>
+                <h4 class="text-sm font-semibold text-white">B.Tech CSE Student</h4>
+                <p class="text-xs text-gray-400 mt-0.5">Building real-world web apps, exploring advanced backend APIs, and web application security.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SVG Terminal Right Column -->
+        <div class="md:col-span-5 flex justify-center">
+          <div class="w-full max-w-[360px] bg-[#050a06] border border-emerald-500/30 rounded-xl overflow-hidden shadow-lg shadow-emerald-950/20">
+            <!-- Emitting the newly created matrix_stats.svg in the preview -->
+            <object type="image/svg+xml" data="matrix_stats.svg" class="w-full h-auto"></object>
+          </div>
+        </div>
+      </div>
+
+      <hr class="border-github-border my-6">
+
+      <!-- Tech Stack Section -->
+      <div class="mb-10">
+        <h3 class="text-xl font-outfit font-semibold text-white mb-4 flex items-center gap-2">
+          <span>🛠️</span> Tech Stack & Skills
+        </h3>
+        <p class="text-sm text-gray-400 mb-6">To keep my profile clean and high-impact, here are the core technologies I specialize in:</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Languages -->
+          <div class="bg-github-card p-5 rounded-lg border border-github-border flex flex-col gap-4">
+            <h4 class="font-outfit font-semibold text-white border-b border-github-border pb-2 flex items-center gap-2">
+              <span>💻</span> Languages
+            </h4>
+            <div class="flex flex-col gap-2.5">
+              <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=flat-square&logo=javascript&logoColor=%23F7DF1E" alt="JS" class="w-fit transition-transform duration-300 hover:scale-105 cursor-pointer" />
+              <img src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=flat-square&logo=typescript&logoColor=white" alt="TS" class="w-fit transition-transform duration-300 hover:scale-105 cursor-pointer" />
+              <img src="https://img.shields.io/badge/python-3670A0?style=flat-square&logo=python&logoColor=ffdd54" alt="Python" class="w-fit transition-transform duration-300 hover:scale-105 cursor-pointer" />
+            </div>
+          </div>
+
+          <!-- Frontend -->
+          <div class="bg-github-card p-5 rounded-lg border border-github-border flex flex-col gap-4">
+            <h4 class="font-outfit font-semibold text-white border-b border-github-border pb-2 flex items-center gap-2">
+              <span>🎨</span> Frontend
+            </h4>
+            <div class="flex flex-col gap-2.5">
+              <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=flat-square&logo=html5&logoColor=white" alt="HTML5" class="w-fit transition-transform duration-300 hover:scale-105 cursor-pointer" />
+              <img src="https://img.shields.io/badge/css3-%231572B6.svg?style=flat-square&logo=css3&logoColor=white" alt="CSS3" class="w-fit transition-transform duration-300 hover:scale-105 cursor-pointer" />
+              <img src="https://img.shields.io/badge/react-%2320232a.svg?style=flat-square&logo=react&logoColor=%2361DAFB" alt="React" class="w-fit transition-transform duration-300 hover:scale-105 cursor-pointer" />
+              <img src="https://img.shields.io/badge/next.js-%23000000.svg?style=flat-square&logo=nextdotjs&logoColor=white" alt="Next.js" class="w-fit transition-transform duration-300 hover:scale-105 cursor-pointer" />
+              <img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=flat-square&logo=tailwind-css&logoColor=white" alt="TailwindCSS" class="w-fit transition-transform duration-300 hover:scale-105 cursor-pointer" />
+            </div>
+          </div>
+
+          <!-- Backend & Tools -->
+          <div class="bg-github-card p-5 rounded-lg border border-github-border flex flex-col gap-4">
+            <h4 class="font-outfit font-semibold text-white border-b border-github-border pb-2 flex items-center gap-2">
+              <span>⚙️</span> Backend & Tools
+            </h4>
+            <div class="flex flex-col gap-2.5">
+              <img src="https://img.shields.io/badge/firebase-%23039BE5.svg?style=flat-square&logo=firebase&logoColor=ffcd34" alt="Firebase" class="w-fit transition-transform duration-300 hover:scale-105 cursor-pointer" />
+              <img src="https://img.shields.io/badge/git-%23F05033.svg?style=flat-square&logo=git&logoColor=white" alt="Git" class="w-fit transition-transform duration-300 hover:scale-105 cursor-pointer" />
+              <img src="https://img.shields.io/badge/github-%23121011.svg?style=flat-square&logo=github&logoColor=white" alt="GitHub" class="w-fit transition-transform duration-300 hover:scale-105 cursor-pointer" />
+              <img src="https://img.shields.io/badge/figma-%23F24E1E.svg?style=flat-square&logo=figma&logoColor=white" alt="Figma" class="w-fit transition-transform duration-300 hover:scale-105 cursor-pointer" />
+              <img src="https://img.shields.io/badge/vercel-%23000000.svg?style=flat-square&logo=vercel&logoColor=white" alt="Vercel" class="w-fit transition-transform duration-300 hover:scale-105 cursor-pointer" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="border-github-border my-6">
+
+      <!-- Featured Projects Section -->
+      <div class="mb-10">
+        <h3 class="text-xl font-outfit font-semibold text-white mb-4 flex items-center gap-2">
+          <span>📂</span> Featured Projects
+        </h3>
+        <p class="text-sm text-gray-400 mb-6">Highlighting my actual code and live deployments so you can see my work directly:</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Card 1 -->
+          <div class="bg-github-card rounded-lg border border-github-border p-5 flex flex-col justify-between hover:border-github-accent transition-colors duration-300">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-semibold text-github-accent uppercase tracking-wider">Live & Open Source</span>
+                <span class="text-lg">🌐</span>
+              </div>
+              <h4 class="text-lg font-bold text-white mb-2">Vibe Weaver</h4>
+              <p class="text-sm text-gray-300 leading-relaxed mb-4">
+                <strong>Dynamic Social Media & Story Sharing Platform.</strong> Built with React, TypeScript, and TailwindCSS. Features infinite scroll feeds, interactive story trays, administrative control panels, and custom layouts.
+              </p>
+            </div>
+            <div class="flex items-center gap-4 pt-3 border-t border-github-border/50 text-sm">
+              <a href="https://vibe-weaver.vercel.app" target="_blank" class="text-github-accent hover:underline flex items-center gap-1">
+                Live Demo ↗
+              </a>
+              <span class="text-github-border">|</span>
+              <a href="https://github.com/Krati-orbit/vibe-weaver" target="_blank" class="text-gray-400 hover:text-white hover:underline flex items-center gap-1">
+                Source Code ↗
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="bg-github-card rounded-lg border border-github-border p-5 flex flex-col justify-between hover:border-github-accent transition-colors duration-300">
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Template Card</span>
+                <span class="text-lg">🛠️</span>
+              </div>
+              <h4 class="text-lg font-bold text-white mb-2">Project Two Name</h4>
+              <p class="text-sm text-gray-300 leading-relaxed mb-4">
+                <strong>Your Full-Stack Web Application / API.</strong> Edit this description to showcase your second-best project. Outline the core problem it solves and backend/database tech used.
+              </p>
+            </div>
+            <div class="flex items-center gap-4 pt-3 border-t border-github-border/50 text-sm">
+              <a href="https://project-demo.vercel.app" target="_blank" class="text-github-accent hover:underline flex items-center gap-1">
+                Live Demo ↗
+              </a>
+              <span class="text-github-border">|</span>
+              <a href="https://github.com/Krati-orbit/your-repo" target="_blank" class="text-gray-400 hover:text-white hover:underline flex items-center gap-1">
+                Source Code ↗
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="border-github-border my-6">
+
+      <!-- GitHub Analytics Section -->
+      <div class="mb-10">
+        <h3 class="text-xl font-outfit font-semibold text-white mb-6 flex items-center gap-2">
+          <span>📊</span> GitHub Profile Overview
+        </h3>
+        <p class="text-sm text-gray-400 mb-6">Instead of commit volume, my focus is on writing clean, modular code in modern web frameworks:</p>
+        
+        <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+          <div class="bg-github-card p-3 rounded-lg border border-github-border w-full md:w-1/2 flex justify-center items-center">
+            <img src="https://github-readme-stats.shion.dev/api/top-langs/?username=Krati-orbit&theme=dark&hide_border=false&include_all_commits=true&count_private=true&layout=compact" alt="Top Languages" class="max-w-full h-auto rounded" />
+          </div>
+          <div class="bg-github-card p-3 rounded-lg border border-github-border w-full md:w-1/2 flex justify-center items-center">
+            <img src="https://github-profile-trophy.vercel.app/?username=Krati-orbit&theme=onedark&column=3&margin-w=10&margin-h=10&no-bg=true" alt="Trophies" class="max-w-full h-auto rounded" />
+          </div>
+        </div>
+      </div>
+
+      <hr class="border-github-border my-6">
+
+      <!-- Connect with me Section -->
+      <div>
+        <h3 class="text-xl font-outfit font-semibold text-white mb-6 text-center flex items-center justify-center gap-2">
+          <span>🌐</span> Connect with Me
+        </h3>
+        <div class="flex justify-center gap-4 mb-6">
+          <a href="https://www.linkedin.com/in/krati-verma-20351a270/" target="_blank" class="transition-transform duration-300 hover:scale-105">
+            <img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" class="rounded" />
+          </a>
+          <a href="mailto:your.email@example.com" class="transition-transform duration-300 hover:scale-105">
+            <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail" class="rounded" />
+          </a>
+        </div>
+
+        <div class="flex justify-center">
+          <img src="https://komarev.com/ghpvc/?username=Krati-orbit&icon=0&color=0552fc" alt="Visitor Count" class="h-6" />
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Raw Content to Copy -->
+  <textarea id="readme-raw" class="hidden"># Hi there, I'm Krati Verma! 👋
+
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Outfit&weight=600&size=24&pause=1000&color=F7DF1E&center=true&vCenter=true&width=435&lines=Computer+Science+Student;Full-Stack+Web+Developer;Problem+Solver" alt="Typing SVG" />
+</p>
+
+---
+
+<table>
+  <tr>
+    <td valign="top" width="55%">
+      <h3>🚀 About Me</h3>
+      <p>
+        I am a 3rd-year <strong>Computer Science and Engineering</strong> student at <strong>Sharda University Agra</strong>, passionate about <strong>Full-Stack Web Development</strong>. I bridge the gap between visually appealing, responsive interfaces and reliable, high-performance backend systems.
+      </p>
+      <ul>
+        <li>🥇 <strong>Hackathon Winner</strong>: Regularly participate in and win hackathons, successfully shipping functional prototypes under strict time constraints.</li>
+        <li>🤝 <strong>Agile Team Player</strong>: Experienced in working in cross-functional developer teams, utilizing Git collaboration workflows, branch management, and peer PR reviews.</li>
+        <li>🎓 <strong>B.Tech CSE Student</strong>: Building real-world web apps, exploring advanced backend APIs, and web application security.</li>
+      </ul>
+    </td>
+    <td valign="top" width="45%" align="center">
+      <img src="matrix_stats.svg" width="100%" alt="Cyber Stats Terminal" />
+    </td>
+  </tr>
+</table>
+
+---
+
+### 🛠️ Tech Stack & Skills
+
+To keep my profile clean and high-impact, here are the core technologies I specialize in:
+
+<table>
+  <tr>
+    <td valign="top" width="33%">
+      <h4>💻 Languages</h4>
+      <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=flat-square&logo=javascript&logoColor=%23F7DF1E" alt="JS" /><br/>
+      <img src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=flat-square&logo=typescript&logoColor=white" alt="TS" /><br/>
+      <img src="https://img.shields.io/badge/python-3670A0?style=flat-square&logo=python&logoColor=ffdd54" alt="Python" />
+    </td>
+    <td valign="top" width="33%">
+      <h4>🎨 Frontend</h4>
+      <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=flat-square&logo=html5&logoColor=white" alt="HTML5" /><br/>
+      <img src="https://img.shields.io/badge/css3-%231572B6.svg?style=flat-square&logo=css3&logoColor=white" alt="CSS3" /><br/>
+      <img src="https://img.shields.io/badge/react-%2320232a.svg?style=flat-square&logo=react&logoColor=%2361DAFB" alt="React" /><br/>
+      <img src="https://img.shields.io/badge/next.js-%23000000.svg?style=flat-square&logo=nextdotjs&logoColor=white" alt="Next.js" /><br/>
+      <img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=flat-square&logo=tailwind-css&logoColor=white" alt="TailwindCSS" />
+    </td>
+    <td valign="top" width="33%">
+      <h4>⚙️ Backend & Tools</h4>
+      <img src="https://img.shields.io/badge/firebase-%23039BE5.svg?style=flat-square&logo=firebase&logoColor=ffcd34" alt="Firebase" /><br/>
+      <img src="https://img.shields.io/badge/git-%23F05033.svg?style=flat-square&logo=git&logoColor=white" alt="Git" /><br/>
+      <img src="https://img.shields.io/badge/github-%23121011.svg?style=flat-square&logo=github&logoColor=white" alt="GitHub" /><br/>
+      <img src="https://img.shields.io/badge/figma-%23F24E1E.svg?style=flat-square&logo=figma&logoColor=white" alt="Figma" /><br/>
+      <img src="https://img.shields.io/badge/vercel-%23000000.svg?style=flat-square&logo=vercel&logoColor=white" alt="Vercel" />
+    </td>
+  </tr>
+</table>
+
+---
+
+### 📂 Featured Projects
+
+Highlighting my actual code and live deployments so you can see my work directly:
+
+| 🌐 [Vibe Weaver](https://github.com/Krati-orbit/vibe-weaver) | 🛠️ [Project Two Name](https://github.com/Krati-orbit/your-repo) |
+| :--- | :--- |
+| **Dynamic Social Media & Story Sharing Platform**<br>Built with React, TypeScript, and TailwindCSS. Features infinite scroll feeds, interactive story trays, administrative control panels, and custom layouts. | **Your Full-Stack Web Application / API**<br>Edit this description to showcase your second-best project. Outline the core problem it solves and backend/database tech used. |
+| 🔗 [Live Demo](https://vibe-weaver.vercel.app) \| [Code](https://github.com/Krati-orbit/vibe-weaver) | 🔗 [Live Demo](https://project-demo.vercel.app) \| [Code](https://github.com/Krati-orbit/your-repo) |
+
+---
+
+### 📊 GitHub Profile Overview
+
+Instead of commit volume, my focus is on **writing clean, modular code** in modern web frameworks:
+
+<p align="center">
+  <img src="https://github-readme-stats.shion.dev/api/top-langs/?username=Krati-orbit&theme=dark&hide_border=false&include_all_commits=true&count_private=true&layout=compact" alt="Top Languages" width="360" />
+  &nbsp;&nbsp;
+  <img src="https://github-profile-trophy.vercel.app/?username=Krati-orbit&theme=onedark&column=3&margin-w=10&margin-h=10&no-bg=true" alt="Trophies" width="380" />
+</p>
+
+---
+
+### 🌐 Connect with Me
+
+<p align="center">
+  <a href="https://www.linkedin.com/in/krati-verma-20351a270/">
+    <img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+  </a>
+  &nbsp;&nbsp;
+  <a href="mailto:your.email@example.com">
+    <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail" />
+  </a>
+</p>
+
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=Krati-orbit&icon=0&color=0552fc" alt="Visitor Count" />
+</p></textarea>
+
+  <script>
+    function copyReadme() {
+      const readmeText = document.getElementById('readme-raw');
+      readmeText.select();
+      readmeText.setSelectionRange(0, 99999); // For mobile devices
+      navigator.clipboard.writeText(readmeText.value).then(() => {
+        const toast = document.getElementById('toast');
+        toast.style.opacity = '1';
+        toast.style.transform = 'translateY(0)';
+        setTimeout(() => {
+          toast.style.opacity = '0';
+          toast.style.transform = 'translateY(-100px)';
+        }, 3000);
+      });
+    }
+  </script>
+</body>
+</html>

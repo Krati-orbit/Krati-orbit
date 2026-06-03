@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <!-- Circuit Board Pattern -->
+    <pattern id="circuit" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M 0 40 L 40 40 M 40 40 L 50 50 M 50 50 L 80 50 M 20 0 L 20 20 M 20 20 L 30 30 M 30 30 L 30 80" stroke="#0d301d" stroke-width="1" fill="none" opacity="0.4" />
+      <circle cx="40" cy="40" r="3" fill="#0d301d" opacity="0.6" />
+      <circle cx="30" cy="30" r="2" fill="#0d301d" opacity="0.6" />
+    </pattern>
+
+    <!-- Glowing effect -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <style>
+      .bg { fill: #050a06; }
+      .matrix-text { font-family: monospace; font-size: 10px; fill: #00ff66; opacity: 0.12; }
+      .terminal-frame { fill: #07100b; stroke: #00ff66; stroke-width: 1.5; filter: url(#glow); }
+      .terminal-header { fill: #0e1d14; }
+      .neon-text { font-family: 'Courier New', Courier, monospace; fill: #33ff77; font-weight: bold; filter: url(#glow); }
+      .cursor { fill: #33ff77; animation: blink 1s step-end infinite; }
+      
+      /* Falling Matrix Code Animation */
+      @keyframes fall {
+        0% { transform: translateY(-300px); }
+        100% { transform: translateY(300px); }
+      }
+      .col-1 { animation: fall 8s linear infinite; }
+      .col-2 { animation: fall 6s linear infinite; }
+      .col-3 { animation: fall 10s linear infinite; }
+      .col-4 { animation: fall 7s linear infinite; }
+
+      @keyframes blink {
+        50% { opacity: 0; }
+      }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="300" class="bg" />
+  <rect width="400" height="300" fill="url(#circuit)" />
+
+  <!-- Falling matrix letters (simulated binary) -->
+  <g class="matrix-text">
+    <text x="20" y="0" class="col-1">101011001101010100111001010110</text>
+    <text x="60" y="-50" class="col-2">011010011001101011001010110110</text>
+    <text x="120" y="-100" class="col-3">100101100110010101101011001100</text>
+    <text x="180" y="-20" class="col-4">011001100101101010011001101010</text>
+    <text x="240" y="-80" class="col-1">110010101101011001100110010110</text>
+    <text x="300" y="-150" class="col-3">010110011001101010011010110011</text>
+    <text x="350" y="-40" class="col-2">101100101011011001100101101010</text>
+  </g>
+
+  <!-- Terminal Window (Hacker Aesthetic) -->
+  <g transform="translate(30, 40)">
+    <!-- Terminal Border/Glow Frame -->
+    <rect width="340" height="220" rx="8" class="terminal-frame" />
+    <!-- Terminal Titlebar -->
+    <path d="M 8 0 L 332 0 A 8 8 0 0 1 340 8 L 340 25 L 0 25 L 0 8 A 8 8 0 0 1 8 0 Z" class="terminal-header" />
+    
+    <!-- Window Control Dots -->
+    <circle cx="15" cy="12" r="4" fill="#ff5f56" />
+    <circle cx="27" cy="12" r="4" fill="#ffbd2e" />
+    <circle cx="39" cy="12" r="4" fill="#27c93f" />
+    
+    <!-- Window Title -->
+    <text x="170" y="16" font-family="monospace" font-size="10" fill="#88b598" text-anchor="middle">krati@cyber-terminal:~</text>
+
+    <!-- Terminal Content -->
+    <g transform="translate(20, 55)">
+      <!-- Line 1 -->
+      <text x="0" y="0" class="neon-text" font-size="12">krati-orbit:~$ ./check_credentials.sh</text>
+      <!-- Line 2 -->
+      <text x="0" y="22" class="neon-text" font-size="10" fill="#00ff66">> COMPILING SKILLSETS...</text>
+      
+      <!-- Line 3 (Hackathons) -->
+      <text x="0" y="48" class="neon-text" font-size="11" fill="#33ff77">🥇 HACKATHONS   : WINNER</text>
+      <text x="15" y="62" class="neon-text" font-size="9.5" fill="#88b598">- Multi-hackathon champ</text>
+
+      <!-- Line 4 (Teamwork) -->
+      <text x="0" y="88" class="neon-text" font-size="11" fill="#33ff77">🤝 TEAMWORK     : ACTIVE COLLABORATOR</text>
+      <text x="15" y="102" class="neon-text" font-size="9.5" fill="#88b598">- Git &amp; Agile delivery expert</text>
+
+      <!-- Line 5 (Active Cursor) -->
+      <text x="0" y="130" class="neon-text" font-size="12">krati-orbit:~$ <tspan fill="#00ff66">status_</tspan></text>
+      <rect x="154" y="119" width="8" height="13" class="cursor" />
+    </g>
+  </g>
+</svg>

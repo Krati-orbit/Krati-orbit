@@ -106,6 +106,17 @@ Instead of commit volume, my focus is on **writing clean, modular code** in mode
 
 ---
 
+### 🎵 Coding Soundtrack
+Here's what I'm currently listening to on Spotify while building apps:
+
+<p align="center">
+  <a href="https://open.spotify.com/user/your_spotify_id">
+    <img src="https://spotify-github-profile.vercel.app/api/view?uid=your_spotify_uid&cover_image=true&theme=dark" alt="Spotify Now Playing" width="420" />
+  </a>
+</p>
+
+---
+
 ### 🌐 Connect with Me
 
 <p align="center">

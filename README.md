@@ -117,6 +117,19 @@ Here's what I'm currently listening to on Spotify while building apps:
 
 ---
 
+### 👾 Contribution Pac-Man
+This retro board is compiled daily by a custom GitHub Action workflow, transforming my contributions into a game of Pac-Man:
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Krati-orbit/Krati-orbit/output/pacman-contribution-graph-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Krati-orbit/Krati-orbit/output/pacman-contribution-graph.svg">
+    <img alt="Pacman Contribution Graph" src="https://raw.githubusercontent.com/Krati-orbit/Krati-orbit/output/pacman-contribution-graph.svg">
+  </picture>
+</p>
+
+---
+
 ### 🌐 Connect with Me
 
 <p align="center">

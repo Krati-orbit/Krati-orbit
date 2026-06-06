@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,9 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -35,31 +38,38 @@
     body {
       background: radial-gradient(circle at 50% 50%, #1a202c 0%, #0d1117 100%);
     }
+
     .glass-card {
       background: rgba(22, 27, 34, 0.7);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border: 1px solid rgba(48, 54, 61, 0.6);
     }
+
     .badge-hover:hover {
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(88, 166, 255, 0.2);
     }
   </style>
 </head>
+
 <body class="text-github-text min-h-screen py-10 px-4 font-sans antialiased">
 
   <div class="max-w-4xl mx-auto">
     <!-- Header Controls -->
-    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 pb-6 border-b border-github-border gap-4">
+    <div
+      class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 pb-6 border-b border-github-border gap-4">
       <div>
         <h1 class="text-3xl font-outfit font-bold text-white tracking-wide">✨ Profile Preview</h1>
         <p class="text-sm text-gray-400 mt-1">Interactive local view of your custom GitHub README</p>
       </div>
       <div class="flex items-center gap-3">
-        <button onclick="copyReadme()" class="px-5 py-2.5 bg-github-accent hover:bg-blue-400 text-github-dark font-semibold rounded-lg shadow-md transition-all duration-300 transform hover:scale-[1.02] flex items-center gap-2">
+        <button onclick="copyReadme()"
+          class="px-5 py-2.5 bg-github-accent hover:bg-blue-400 text-github-dark font-semibold rounded-lg shadow-md transition-all duration-300 transform hover:scale-[1.02] flex items-center gap-2">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+              d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3">
+            </path>
           </svg>
           Copy README Markdown
         </button>
@@ -67,19 +77,25 @@
     </div>
 
     <!-- Notification Alert -->
-    <div id="toast" class="fixed top-5 right-5 bg-emerald-500 text-white px-6 py-3 rounded-lg shadow-xl font-medium transform translate-y-[-100px] opacity-0 transition-all duration-300 z-50 flex items-center gap-2">
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+    <div id="toast"
+      class="fixed top-5 right-5 bg-emerald-500 text-white px-6 py-3 rounded-lg shadow-xl font-medium transform translate-y-[-100px] opacity-0 transition-all duration-300 z-50 flex items-center gap-2">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+      </svg>
       README copied to clipboard!
     </div>
 
     <!-- GitHub Container -->
-    <div class="glass-card rounded-xl overflow-hidden shadow-2xl p-6 sm:p-8 transition-all duration-300 hover:shadow-cyan-950/20">
-      
+    <div
+      class="glass-card rounded-xl overflow-hidden shadow-2xl p-6 sm:p-8 transition-all duration-300 hover:shadow-cyan-950/20">
+
       <!-- Greeting Header -->
       <div class="text-center mb-8">
         <h2 class="text-3xl sm:text-4xl font-outfit font-extrabold text-white mb-2">Hi there, I'm Krati Verma! 👋</h2>
         <div class="inline-block mt-2">
-          <img src="https://readme-typing-svg.demolab.com?font=Outfit&weight=600&size=22&pause=1000&color=F7DF1E&center=true&vCenter=true&width=435&lines=Computer+Science+Student;Full-Stack+Web+Developer;Problem+Solver" alt="Typing SVG" class="mx-auto" />
+          <img
+            src="https://readme-typing-svg.demolab.com?font=Outfit&weight=600&size=22&pause=1000&color=F7DF1E&center=true&vCenter=true&width=435&lines=Computer+Science+Student;Full-Stack+Web+Developer;Problem+Solver"
+            alt="Typing SVG" class="mx-auto" />
         </div>
       </div>
 
@@ -93,36 +109,51 @@
             <span>🚀</span> About Me
           </h3>
           <p class="text-base text-gray-300 leading-relaxed mb-6">
-            I am a 3rd-year <strong>Computer Science and Engineering</strong> student at <strong>Sharda University Agra</strong>, passionate about <strong>Full-Stack Web Development</strong>. I bridge the gap between visually appealing, responsive interfaces and reliable, high-performance backend systems.
+            I am a 3rd-year <strong>Computer Science and Engineering</strong> student at
+            <strong>Sharda University Agra</strong>, who believes in
+            <strong>solving problems smartly</strong> — not just writing long code.
+            I leverage <strong>AI & modern tools</strong> to build solutions that are
+            fast, efficient, and actually useful. My focus is on
+            <strong>impact over effort</strong> — getting things done the right way,
+            in less time.
           </p>
-          
+
           <div class="space-y-4">
-            <div class="bg-github-card p-4 rounded-lg border border-github-border/60 hover:border-github-accent/40 transition-colors duration-300 flex items-start gap-3">
+            <div
+              class="bg-github-card p-4 rounded-lg border border-github-border/60 hover:border-github-accent/40 transition-colors duration-300 flex items-start gap-3">
               <span class="text-2xl mt-0.5">🥇</span>
               <div>
                 <h4 class="text-sm font-semibold text-white">Hackathon Winner</h4>
-                <p class="text-xs text-gray-400 mt-0.5">Regularly participate in and win hackathons, successfully shipping functional prototypes under strict time constraints.</p>
+                <p class="text-xs text-gray-400 mt-0.5">Regularly participate in and win hackathons, successfully
+                  shipping functional prototypes under strict time constraints.</p>
               </div>
             </div>
-            <div class="bg-github-card p-4 rounded-lg border border-github-border/60 hover:border-github-accent/40 transition-colors duration-300 flex items-start gap-3">
+            <div
+              class="bg-github-card p-4 rounded-lg border border-github-border/60 hover:border-github-accent/40 transition-colors duration-300 flex items-start gap-3">
               <span class="text-2xl mt-0.5">🤝</span>
               <div>
                 <h4 class="text-sm font-semibold text-white">Agile Team Player</h4>
-                <p class="text-xs text-gray-400 mt-0.5">Experienced in working in cross-functional developer teams, utilizing Git collaboration workflows, branch management, and peer PR reviews.</p>
+                <p class="text-xs text-gray-400 mt-0.5">Experienced in working in cross-functional developer teams,
+                  utilizing Git collaboration workflows, branch management, and peer PR reviews.</p>
               </div>
             </div>
-            <div class="bg-github-card p-4 rounded-lg border border-github-border/60 hover:border-github-accent/40 transition-colors duration-300 flex items-start gap-3">
+            <div
+              class="bg-github-card p-4 rounded-lg border border-github-border/60 hover:border-github-accent/40 transition-colors duration-300 flex items-start gap-3">
               <span class="text-2xl mt-0.5">🛡️</span>
               <div>
                 <h4 class="text-sm font-semibold text-white">Cybersecurity Enthusiast</h4>
-                <p class="text-xs text-gray-400 mt-0.5">Familiar with network security fundamentals, traffic monitoring using Wireshark, network topology simulation via Cisco Packet Tracer, and secure Linux configurations.</p>
+                <p class="text-xs text-gray-400 mt-0.5">Familiar with network security fundamentals, traffic monitoring
+                  using Wireshark, network topology simulation via Cisco Packet Tracer, and secure Linux configurations.
+                </p>
               </div>
             </div>
-            <div class="bg-github-card p-4 rounded-lg border border-github-border/60 hover:border-github-accent/40 transition-colors duration-300 flex items-start gap-3">
+            <div
+              class="bg-github-card p-4 rounded-lg border border-github-border/60 hover:border-github-accent/40 transition-colors duration-300 flex items-start gap-3">
               <span class="text-2xl mt-0.5">🎓</span>
               <div>
                 <h4 class="text-sm font-semibold text-white">B.Tech CSE Student</h4>
-                <p class="text-xs text-gray-400 mt-0.5">Building real-world web apps, exploring advanced backend APIs, and web application security.</p>
+                <p class="text-xs text-gray-400 mt-0.5">Building real-world web apps, exploring advanced backend APIs,
+                  and web application security.</p>
               </div>
             </div>
           </div>
@@ -130,7 +161,8 @@
 
         <!-- SVG Terminal Right Column -->
         <div class="md:col-span-5 flex justify-center">
-          <div class="w-full max-w-[360px] bg-[#050a06] border border-emerald-500/30 rounded-xl overflow-hidden shadow-lg shadow-emerald-950/20">
+          <div
+            class="w-full max-w-[360px] bg-[#050a06] border border-emerald-500/30 rounded-xl overflow-hidden shadow-lg shadow-emerald-950/20">
             <!-- Emitting the newly created matrix_stats.svg in the preview -->
             <object type="image/svg+xml" data="matrix_stats.svg" class="w-full h-auto"></object>
           </div>
@@ -144,8 +176,9 @@
         <h3 class="text-xl font-outfit font-semibold text-white mb-4 flex items-center gap-2">
           <span>🛠️</span> Tech Stack & Skills
         </h3>
-        <p class="text-sm text-gray-400 mb-6">To keep my profile clean and high-impact, here are the core technologies I specialize in:</p>
-        
+        <p class="text-sm text-gray-400 mb-6">To keep my profile clean and high-impact, here are the core technologies I
+          specialize in:</p>
+
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
           <!-- Languages -->
           <div class="bg-github-card p-5 rounded-lg border border-github-border flex flex-col gap-4">
@@ -153,9 +186,14 @@
               <span>💻</span> Languages
             </h4>
             <div class="flex flex-col gap-2.5">
-              <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=flat-square&logo=javascript&logoColor=%23F7DF1E" alt="JS" class="w-fit transition-transform duration-300 hover:scale-105 cursor-pointer" />
-              <img src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=flat-square&logo=typescript&logoColor=white" alt="TS" class="w-fit transition-transform duration-300 hover:scale-105 cursor-pointer" />
-              <img src="https://img.shields.io/badge/python-3670A0?style=flat-square&logo=python&logoColor=ffdd54" alt="Python" class="w-fit transition-transform duration-300 hover:scale-105 cursor-pointer" />
+              <img
+                src="https://img.shields.io/badge/javascript-%23323330.svg?style=flat-square&logo=javascript&logoColor=%23F7DF1E"
+                alt="JS" class="w-fit transition-transform duration-300 hover:scale-105 cursor-pointer" />
+              <img
+                src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=flat-square&logo=typescript&logoColor=white"
+                alt="TS" class="w-fit transition-transform duration-300 hover:scale-105 cursor-pointer" />
+              <img src="https://img.shields.io/badge/python-3670A0?style=flat-square&logo=python&logoColor=ffdd54"
+                alt="Python" class="w-fit transition-transform duration-300 hover:scale-105 cursor-pointer" />
             </div>
           </div>
 
@@ -165,11 +203,19 @@
               <span>🎨</span> Frontend
             </h4>
             <div class="flex flex-col gap-2.5">
-              <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=flat-square&logo=html5&logoColor=white" alt="HTML5" class="w-fit transition-transform duration-300 hover:scale-105 cursor-pointer" />
-              <img src="https://img.shields.io/badge/css3-%231572B6.svg?style=flat-square&logo=css3&logoColor=white" alt="CSS3" class="w-fit transition-transform duration-300 hover:scale-105 cursor-pointer" />
-              <img src="https://img.shields.io/badge/react-%2320232a.svg?style=flat-square&logo=react&logoColor=%2361DAFB" alt="React" class="w-fit transition-transform duration-300 hover:scale-105 cursor-pointer" />
-              <img src="https://img.shields.io/badge/next.js-%23000000.svg?style=flat-square&logo=nextdotjs&logoColor=white" alt="Next.js" class="w-fit transition-transform duration-300 hover:scale-105 cursor-pointer" />
-              <img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=flat-square&logo=tailwind-css&logoColor=white" alt="TailwindCSS" class="w-fit transition-transform duration-300 hover:scale-105 cursor-pointer" />
+              <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=flat-square&logo=html5&logoColor=white"
+                alt="HTML5" class="w-fit transition-transform duration-300 hover:scale-105 cursor-pointer" />
+              <img src="https://img.shields.io/badge/css3-%231572B6.svg?style=flat-square&logo=css3&logoColor=white"
+                alt="CSS3" class="w-fit transition-transform duration-300 hover:scale-105 cursor-pointer" />
+              <img
+                src="https://img.shields.io/badge/react-%2320232a.svg?style=flat-square&logo=react&logoColor=%2361DAFB"
+                alt="React" class="w-fit transition-transform duration-300 hover:scale-105 cursor-pointer" />
+              <img
+                src="https://img.shields.io/badge/next.js-%23000000.svg?style=flat-square&logo=nextdotjs&logoColor=white"
+                alt="Next.js" class="w-fit transition-transform duration-300 hover:scale-105 cursor-pointer" />
+              <img
+                src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=flat-square&logo=tailwind-css&logoColor=white"
+                alt="TailwindCSS" class="w-fit transition-transform duration-300 hover:scale-105 cursor-pointer" />
             </div>
           </div>
 
@@ -179,11 +225,17 @@
               <span>⚙️</span> Backend & Tools
             </h4>
             <div class="flex flex-col gap-2.5">
-              <img src="https://img.shields.io/badge/firebase-%23039BE5.svg?style=flat-square&logo=firebase&logoColor=ffcd34" alt="Firebase" class="w-fit transition-transform duration-300 hover:scale-105 cursor-pointer" />
-              <img src="https://img.shields.io/badge/git-%23F05033.svg?style=flat-square&logo=git&logoColor=white" alt="Git" class="w-fit transition-transform duration-300 hover:scale-105 cursor-pointer" />
-              <img src="https://img.shields.io/badge/github-%23121011.svg?style=flat-square&logo=github&logoColor=white" alt="GitHub" class="w-fit transition-transform duration-300 hover:scale-105 cursor-pointer" />
-              <img src="https://img.shields.io/badge/figma-%23F24E1E.svg?style=flat-square&logo=figma&logoColor=white" alt="Figma" class="w-fit transition-transform duration-300 hover:scale-105 cursor-pointer" />
-              <img src="https://img.shields.io/badge/vercel-%23000000.svg?style=flat-square&logo=vercel&logoColor=white" alt="Vercel" class="w-fit transition-transform duration-300 hover:scale-105 cursor-pointer" />
+              <img
+                src="https://img.shields.io/badge/firebase-%23039BE5.svg?style=flat-square&logo=firebase&logoColor=ffcd34"
+                alt="Firebase" class="w-fit transition-transform duration-300 hover:scale-105 cursor-pointer" />
+              <img src="https://img.shields.io/badge/git-%23F05033.svg?style=flat-square&logo=git&logoColor=white"
+                alt="Git" class="w-fit transition-transform duration-300 hover:scale-105 cursor-pointer" />
+              <img src="https://img.shields.io/badge/github-%23121011.svg?style=flat-square&logo=github&logoColor=white"
+                alt="GitHub" class="w-fit transition-transform duration-300 hover:scale-105 cursor-pointer" />
+              <img src="https://img.shields.io/badge/figma-%23F24E1E.svg?style=flat-square&logo=figma&logoColor=white"
+                alt="Figma" class="w-fit transition-transform duration-300 hover:scale-105 cursor-pointer" />
+              <img src="https://img.shields.io/badge/vercel-%23000000.svg?style=flat-square&logo=vercel&logoColor=white"
+                alt="Vercel" class="w-fit transition-transform duration-300 hover:scale-105 cursor-pointer" />
             </div>
           </div>
 
@@ -193,9 +245,13 @@
               <span>🛡️</span> Cyber & OS
             </h4>
             <div class="flex flex-col gap-2.5">
-              <img src="https://img.shields.io/badge/linux-%23FCC624.svg?style=flat-square&logo=linux&logoColor=black" alt="Linux" class="w-fit transition-transform duration-300 hover:scale-105 cursor-pointer" />
-              <img src="https://img.shields.io/badge/cisco-%2312A5F4.svg?style=flat-square&logo=cisco&logoColor=white" alt="Cisco" class="w-fit transition-transform duration-300 hover:scale-105 cursor-pointer" />
-              <img src="https://img.shields.io/badge/Wireshark-%23167EBA.svg?style=flat-square&logo=wireshark&logoColor=white" alt="Wireshark" class="w-fit transition-transform duration-300 hover:scale-105 cursor-pointer" />
+              <img src="https://img.shields.io/badge/linux-%23FCC624.svg?style=flat-square&logo=linux&logoColor=black"
+                alt="Linux" class="w-fit transition-transform duration-300 hover:scale-105 cursor-pointer" />
+              <img src="https://img.shields.io/badge/cisco-%2312A5F4.svg?style=flat-square&logo=cisco&logoColor=white"
+                alt="Cisco" class="w-fit transition-transform duration-300 hover:scale-105 cursor-pointer" />
+              <img
+                src="https://img.shields.io/badge/Wireshark-%23167EBA.svg?style=flat-square&logo=wireshark&logoColor=white"
+                alt="Wireshark" class="w-fit transition-transform duration-300 hover:scale-105 cursor-pointer" />
             </div>
           </div>
         </div>
@@ -208,34 +264,42 @@
         <h3 class="text-xl font-outfit font-semibold text-white mb-4 flex items-center gap-2">
           <span>📂</span> Featured Projects
         </h3>
-        <p class="text-sm text-gray-400 mb-6">Highlighting my actual code and live deployments so you can see my work directly:</p>
+        <p class="text-sm text-gray-400 mb-6">Highlighting my actual code and live deployments so you can see my work
+          directly:</p>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <!-- Card 1 -->
-          <div class="bg-github-card rounded-lg border border-github-border p-5 flex flex-col justify-between hover:border-github-accent transition-colors duration-300">
+          <div
+            class="bg-github-card rounded-lg border border-github-border p-5 flex flex-col justify-between hover:border-github-accent transition-colors duration-300">
             <div>
               <div class="flex items-center justify-between mb-2">
-                <span class="text-xs font-semibold text-github-accent uppercase tracking-wider">Live & Open Source</span>
+                <span class="text-xs font-semibold text-github-accent uppercase tracking-wider">Live & Open
+                  Source</span>
                 <span class="text-lg">🌐</span>
               </div>
               <h4 class="text-lg font-bold text-white mb-2">Vibe Weaver</h4>
               <p class="text-sm text-gray-300 leading-relaxed mb-4">
-                <strong>Dynamic Social Media & Story Sharing Platform.</strong> Built with React, TypeScript, and TailwindCSS. Features infinite scroll feeds, interactive story trays, administrative control panels, and custom layouts.
+                <strong>Dynamic Social Media & Story Sharing Platform.</strong> Built with React, TypeScript, and
+                TailwindCSS. Features infinite scroll feeds, interactive story trays, administrative control panels, and
+                custom layouts.
               </p>
             </div>
             <div class="flex items-center gap-4 pt-3 border-t border-github-border/50 text-sm">
-              <a href="https://vibe-weaver.vercel.app" target="_blank" class="text-github-accent hover:underline flex items-center gap-1">
+              <a href="https://vibe-weaver.vercel.app" target="_blank"
+                class="text-github-accent hover:underline flex items-center gap-1">
                 Live Demo ↗
               </a>
               <span class="text-github-border">|</span>
-              <a href="https://github.com/Krati-orbit/vibe-weaver" target="_blank" class="text-gray-400 hover:text-white hover:underline flex items-center gap-1">
+              <a href="https://github.com/Krati-orbit/vibe-weaver" target="_blank"
+                class="text-gray-400 hover:text-white hover:underline flex items-center gap-1">
                 Source Code ↗
               </a>
             </div>
           </div>
 
           <!-- Card 2 -->
-          <div class="bg-github-card rounded-lg border border-github-border p-5 flex flex-col justify-between hover:border-github-accent transition-colors duration-300">
+          <div
+            class="bg-github-card rounded-lg border border-github-border p-5 flex flex-col justify-between hover:border-github-accent transition-colors duration-300">
             <div>
               <div class="flex items-center justify-between mb-2">
                 <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Template Card</span>
@@ -243,15 +307,18 @@
               </div>
               <h4 class="text-lg font-bold text-white mb-2">Project Two Name</h4>
               <p class="text-sm text-gray-300 leading-relaxed mb-4">
-                <strong>Your Full-Stack Web Application / API.</strong> Edit this description to showcase your second-best project. Outline the core problem it solves and backend/database tech used.
+                <strong>Your Full-Stack Web Application / API.</strong> Edit this description to showcase your
+                second-best project. Outline the core problem it solves and backend/database tech used.
               </p>
             </div>
             <div class="flex items-center gap-4 pt-3 border-t border-github-border/50 text-sm">
-              <a href="https://project-demo.vercel.app" target="_blank" class="text-github-accent hover:underline flex items-center gap-1">
+              <a href="https://project-demo.vercel.app" target="_blank"
+                class="text-github-accent hover:underline flex items-center gap-1">
                 Live Demo ↗
               </a>
               <span class="text-github-border">|</span>
-              <a href="https://github.com/Krati-orbit/your-repo" target="_blank" class="text-gray-400 hover:text-white hover:underline flex items-center gap-1">
+              <a href="https://github.com/Krati-orbit/your-repo" target="_blank"
+                class="text-gray-400 hover:text-white hover:underline flex items-center gap-1">
                 Source Code ↗
               </a>
             </div>
@@ -266,14 +333,21 @@
         <h3 class="text-xl font-outfit font-semibold text-white mb-6 flex items-center gap-2">
           <span>📊</span> GitHub Profile Overview
         </h3>
-        <p class="text-sm text-gray-400 mb-6">Instead of commit volume, my focus is on writing clean, modular code in modern web frameworks:</p>
-        
+        <p class="text-sm text-gray-400 mb-6">Instead of commit volume, my focus is on writing clean, modular code in
+          modern web frameworks:</p>
+
         <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
-          <div class="bg-github-card p-3 rounded-lg border border-github-border w-full md:w-1/2 flex justify-center items-center">
-            <img src="https://github-readme-stats.shion.dev/api/top-langs/?username=Krati-orbit&theme=dark&hide_border=false&include_all_commits=true&count_private=true&layout=compact&hide=html,css" alt="Top Languages" class="max-w-full h-auto rounded" />
+          <div
+            class="bg-github-card p-3 rounded-lg border border-github-border w-full md:w-1/2 flex justify-center items-center">
+            <img
+              src="https://github-readme-stats.shion.dev/api/top-langs/?username=Krati-orbit&theme=dark&hide_border=false&include_all_commits=true&count_private=true&layout=compact&hide=html,css"
+              alt="Top Languages" class="max-w-full h-auto rounded" />
           </div>
-          <div class="bg-github-card p-3 rounded-lg border border-github-border w-full md:w-1/2 flex justify-center items-center">
-            <img src="https://github-profile-trophy.vercel.app/?username=Krati-orbit&theme=onedark&column=3&margin-w=10&margin-h=10&no-bg=true" alt="Trophies" class="max-w-full h-auto rounded" />
+          <div
+            class="bg-github-card p-3 rounded-lg border border-github-border w-full md:w-1/2 flex justify-center items-center">
+            <img
+              src="https://github-profile-trophy.vercel.app/?username=Krati-orbit&theme=onedark&column=3&margin-w=10&margin-h=10&no-bg=true"
+              alt="Trophies" class="max-w-full h-auto rounded" />
           </div>
         </div>
       </div>
@@ -283,22 +357,27 @@
         <h3 class="text-xl font-outfit font-semibold text-white mb-4 flex items-center justify-center gap-2">
           <span>🎮</span> Anime Battle Arena
         </h3>
-        <p class="text-sm text-gray-400 mb-6">Pick your fighter and play my custom interactive mini-game directly in your browser!</p>
-        
+        <p class="text-sm text-gray-400 mb-6">Pick your fighter and play my custom interactive mini-game directly in
+          your browser!</p>
+
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-xl mx-auto mb-6">
-          <a href="game.html?hero=naruto" class="p-3 bg-github-card border border-github-border rounded-lg hover:border-[#ff6600] transition-colors duration-300">
+          <a href="game.html?hero=naruto"
+            class="p-3 bg-github-card border border-github-border rounded-lg hover:border-[#ff6600] transition-colors duration-300">
             <span class="text-3xl block mb-1">🍥</span>
             <span class="text-xs font-semibold text-white">Naruto</span>
           </a>
-          <a href="game.html?hero=luffy" class="p-3 bg-github-card border border-github-border rounded-lg hover:border-[#ff2222] transition-colors duration-300">
+          <a href="game.html?hero=luffy"
+            class="p-3 bg-github-card border border-github-border rounded-lg hover:border-[#ff2222] transition-colors duration-300">
             <span class="text-3xl block mb-1">🏴‍☠️</span>
             <span class="text-xs font-semibold text-white">Luffy</span>
           </a>
-          <a href="game.html?hero=itachi" class="p-3 bg-github-card border border-github-border rounded-lg hover:border-[#aa44ff] transition-colors duration-300">
+          <a href="game.html?hero=itachi"
+            class="p-3 bg-github-card border border-github-border rounded-lg hover:border-[#aa44ff] transition-colors duration-300">
             <span class="text-3xl block mb-1">👁️</span>
             <span class="text-xs font-semibold text-white">Itachi</span>
           </a>
-          <a href="game.html?hero=goku" class="p-3 bg-github-card border border-github-border rounded-lg hover:border-[#ffdd00] transition-colors duration-300">
+          <a href="game.html?hero=goku"
+            class="p-3 bg-github-card border border-github-border rounded-lg hover:border-[#ffdd00] transition-colors duration-300">
             <span class="text-3xl block mb-1">⚡</span>
             <span class="text-xs font-semibold text-white">Goku</span>
           </a>
@@ -306,7 +385,8 @@
 
         <div class="inline-block transition-transform duration-300 hover:scale-105">
           <a href="game.html" class="inline-flex items-center justify-center">
-            <img src="https://img.shields.io/badge/▶%20Play%20Now-Anime%20Battle%20Arena-ff6600?style=for-the-badge" alt="Play Now" class="rounded shadow-md" />
+            <img src="https://img.shields.io/badge/▶%20Play%20Now-Anime%20Battle%20Arena-ff6600?style=for-the-badge"
+              alt="Play Now" class="rounded shadow-md" />
           </a>
         </div>
       </div>
@@ -317,23 +397,28 @@
           <span>🎵</span> Coding Soundtrack
         </h3>
         <p class="text-sm text-gray-400 mb-6">Here's what I'm currently listening to on Spotify while building apps:</p>
-        
-        <div class="max-w-[420px] mx-auto bg-[#040404] border border-[#1db954]/30 rounded-xl p-4 flex items-center gap-4 shadow-lg hover:shadow-[#1db954]/10 transition-shadow duration-300">
-          <div class="w-16 h-16 bg-zinc-800 rounded-lg flex-shrink-0 relative overflow-hidden flex items-center justify-center text-2xl shadow-md border border-zinc-700">
+
+        <div
+          class="max-w-[420px] mx-auto bg-[#040404] border border-[#1db954]/30 rounded-xl p-4 flex items-center gap-4 shadow-lg hover:shadow-[#1db954]/10 transition-shadow duration-300">
+          <div
+            class="w-16 h-16 bg-zinc-800 rounded-lg flex-shrink-0 relative overflow-hidden flex items-center justify-center text-2xl shadow-md border border-zinc-700">
             💿
           </div>
           <div class="flex-grow text-left">
-            <span class="text-[9px] text-[#1db954] font-orbitron tracking-widest font-bold uppercase animate-pulse">Now Playing</span>
+            <span class="text-[9px] text-[#1db954] font-orbitron tracking-widest font-bold uppercase animate-pulse">Now
+              Playing</span>
             <h4 class="text-sm font-bold text-white mt-0.5 truncate">Coding Lo-fi Beats</h4>
             <p class="text-xs text-gray-400 truncate">Spotify Playlist</p>
-            
+
             <div class="w-full bg-zinc-800 h-1 rounded-full mt-3 overflow-hidden relative">
               <div class="bg-[#1db954] h-full w-[45%] rounded-full"></div>
             </div>
           </div>
           <div class="text-right">
-            <svg class="w-6 h-6 text-[#1db954]" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424c-.18.295-.565.387-.86.207-2.377-1.454-5.37-1.785-8.893-.983-.336.075-.67-.138-.746-.474-.075-.335.138-.67.475-.745 3.856-.88 7.15-.506 9.818 1.13.296.18.387.563.206.865zm1.224-2.723c-.227.368-.712.49-1.08.262-2.72-1.67-6.87-2.155-10.08-1.18-.413.125-.85-.107-.975-.52-.125-.413.107-.85.52-.975 3.66-1.11 8.23-.57 11.36 1.34.367.227.49.712.262 1.08zm.106-2.825C14.39 8.81 8.57 8.62 5.2 9.642c-.524.16-1.077-.137-1.237-.662-.16-.524.138-1.077.662-1.237 3.87-1.173 10.3-0.957 14.36 1.454.47.28.625.892.344 1.363-.28.47-.893.626-1.363.344z"/>
+            <svg class="w-6 h-6 text-[#1db954]" fill="currentColor" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424c-.18.295-.565.387-.86.207-2.377-1.454-5.37-1.785-8.893-.983-.336.075-.67-.138-.746-.474-.075-.335.138-.67.475-.745 3.856-.88 7.15-.506 9.818 1.13.296.18.387.563.206.865zm1.224-2.723c-.227.368-.712.49-1.08.262-2.72-1.67-6.87-2.155-10.08-1.18-.413.125-.85-.107-.975-.52-.125-.413.107-.85.52-.975 3.66-1.11 8.23-.57 11.36 1.34.367.227.49.712.262 1.08zm.106-2.825C14.39 8.81 8.57 8.62 5.2 9.642c-.524.16-1.077-.137-1.237-.662-.16-.524.138-1.077.662-1.237 3.87-1.173 10.3-0.957 14.36 1.454.47.28.625.892.344 1.363-.28.47-.893.626-1.363.344z" />
             </svg>
           </div>
         </div>
@@ -344,11 +429,14 @@
         <h3 class="text-xl font-outfit font-semibold text-white mb-4 flex items-center justify-center gap-2">
           <span>👾</span> Contribution Pac-Man
         </h3>
-        <p class="text-sm text-gray-400 mb-6">This retro board is compiled daily by a custom GitHub Action workflow, transforming my contributions into a game of Pac-Man:</p>
-        
-        <div class="bg-github-card p-6 rounded-lg border border-github-border flex justify-center items-center max-w-xl mx-auto">
+        <p class="text-sm text-gray-400 mb-6">This retro board is compiled daily by a custom GitHub Action workflow,
+          transforming my contributions into a game of Pac-Man:</p>
+
+        <div
+          class="bg-github-card p-6 rounded-lg border border-github-border flex justify-center items-center max-w-xl mx-auto">
           <!-- Official demo representation of the Pac-Man contribution graph -->
-          <img src="https://raw.githubusercontent.com/abozanona/pacman-contribution-graph/main/images/pacman.gif" alt="Pac-Man Contribution Animation" class="max-w-full h-auto rounded" />
+          <img src="https://raw.githubusercontent.com/abozanona/pacman-contribution-graph/main/images/pacman.gif"
+            alt="Pac-Man Contribution Animation" class="max-w-full h-auto rounded" />
         </div>
       </div>
 
@@ -356,20 +444,26 @@
 
       <!-- Connect with me Section -->
       <div>
-        <h3 class="text-xl font-outfit font-semibold text-white mb-6 text-center flex items-center justify-center gap-2">
+        <h3
+          class="text-xl font-outfit font-semibold text-white mb-6 text-center flex items-center justify-center gap-2">
           <span>🌐</span> Connect with Me
         </h3>
         <div class="flex justify-center gap-4 mb-6">
-          <a href="https://www.linkedin.com/in/krati-verma-20351a270/" target="_blank" class="transition-transform duration-300 hover:scale-105">
-            <img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" class="rounded" />
+          <a href="https://www.linkedin.com/in/krati-verma-20351a270/" target="_blank"
+            class="transition-transform duration-300 hover:scale-105">
+            <img
+              src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white"
+              alt="LinkedIn" class="rounded" />
           </a>
           <a href="mailto:your.email@example.com" class="transition-transform duration-300 hover:scale-105">
-            <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail" class="rounded" />
+            <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"
+              alt="Gmail" class="rounded" />
           </a>
         </div>
 
         <div class="flex justify-center">
-          <img src="https://komarev.com/ghpvc/?username=Krati-orbit&icon=0&color=0552fc" alt="Visitor Count" class="h-6" />
+          <img src="https://komarev.com/ghpvc/?username=Krati-orbit&icon=0&color=0552fc" alt="Visitor Count"
+            class="h-6" />
         </div>
       </div>
 
@@ -542,4 +636,5 @@ This retro board is compiled daily by a custom GitHub Action workflow, transform
     }
   </script>
 </body>
+
 </html>

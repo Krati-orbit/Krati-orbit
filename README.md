@@ -11,7 +11,7 @@
     <td valign="top" width="55%">
       <h3>🚀 About Me</h3>
       <p>
-        I am a 3rd-year <strong>Computer Science and Engineering</strong> student at <strong>Sharda University Agra</strong>, passionate about <strong>Full-Stack Web Development</strong>. I bridge the gap between visually appealing, responsive interfaces and reliable, high-performance backend systems.
+        I am a 3rd-year <strong>Computer Science and Engineering</strong> student at <strong>Sharda University Agra</strong>, who believes in <strong>solving problems smartly</strong> — not just writing long code. I leverage <strong>AI & modern tools</strong> to build solutions that are fast, efficient, and actually useful. My focus is on <strong>impact over effort</strong> — getting things done the right way, in less time.
       </p>
       <ul>
         <li>🥇 <strong>Hackathon Winner</strong>: Regularly participate in and win hackathons, successfully shipping functional prototypes under strict time constraints.</li>

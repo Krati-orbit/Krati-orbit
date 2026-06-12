@@ -71,10 +71,10 @@ To keep my profile clean and high-impact, here are the core technologies I speci
 
 Highlighting my actual code and live deployments so you can see my work directly:
 
-| 🌐 [Vibe Weaver](https://github.com/Krati-orbit/vibe-weaver) | 🛠️ [Project Two Name](https://github.com/Krati-orbit/your-repo) |
+| 🌐 [Vibe Weaver](https://github.com/kratagya-07/vibe-weaver-main) | 🔒 [Red Box](https://github.com/Krati-orbit/red-box-app) |
 | :--- | :--- |
-| **Dynamic Social Media & Story Sharing Platform**<br>Built with React, TypeScript, and TailwindCSS. Features infinite scroll feeds, interactive story trays, administrative control panels, and custom layouts. | **Your Full-Stack Web Application / API**<br>Edit this description to showcase your second-best project. Outline the core problem it solves and backend/database tech used. |
-| 🔗 [Live Demo](https://vibe-weaver.vercel.app) \| [Code](https://github.com/Krati-orbit/vibe-weaver) | 🔗 [Live Demo](https://project-demo.vercel.app) \| [Code](https://github.com/Krati-orbit/your-repo) |
+| **Dynamic Social Media & Story Sharing Platform**<br>Built with React, TypeScript, and TailwindCSS. Features infinite scroll feeds, interactive story trays, administrative control panels, and custom layouts. | **Secure Digital Will & Legacy Vault**<br>Built with React, GSAP, and Firebase. Features AES-256 client-side encryption, Two-Factor Authentication (2FA), beneficiary management, and a Deadman's Switch check-in system. |
+| 🔗 [Live Demo](https://chatwave-420er.web.app) \| [Code](https://github.com/kratagya-07/vibe-weaver-main) | 🔗 [Live Demo](https://red-boxx.web.app) \| [Code](https://github.com/Krati-orbit/red-box-app) |
 
 ---
 
@@ -137,7 +137,7 @@ This retro board is compiled daily by a custom GitHub Action workflow, transform
     <img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
   &nbsp;&nbsp;
-  <a href="mailto:your.email@example.com">
+  <a href="mailto:krat2510@gmail.com">
     <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail" />
   </a>
 </p>

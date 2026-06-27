@@ -19,9 +19,22 @@
         <li>🛡️ <strong>Cybersecurity Enthusiast</strong>: Familiar with network security fundamentals, traffic monitoring using Wireshark, network topology simulation via Cisco Packet Tracer, and working with secure Linux configurations.</li>
         <li>🎓 <strong>B.Tech CSE Student</strong>: Building real-world web apps, exploring advanced backend APIs, and web application security.</li>
       </ul>
+      <br/>
+      <!-- Connect Badges -->
+      <a href="https://www.linkedin.com/in/krati-verma-20351a270/" target="_blank">
+        <img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" height="28" />
+      </a>
+      &nbsp;&nbsp;
+      <a href="mailto:krat2510@gmail.com" target="_blank">
+        <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail" height="28" />
+      </a>
     </td>
     <td valign="top" width="45%" align="center">
       <img src="matrix_stats.svg" width="100%" alt="Cyber Stats Terminal" />
+      <br/><br/>
+      <img src="https://github-readme-stats.vercel.app/api?username=Krati-orbit&show_icons=true&theme=matrix&hide_border=false" width="100%" alt="GitHub Stats" />
+      <br/><br/>
+      <img src="https://github-readme-streak-stats.herokuapp.com/?user=Krati-orbit&theme=matrix&hide_border=false" width="100%" alt="GitHub Streak" />
     </td>
   </tr>
 </table>
@@ -34,33 +47,35 @@ To keep my profile clean and high-impact, here are the core technologies I speci
 
 <table>
   <tr>
-    <td valign="top" width="25%">
-      <h4>💻 Languages</h4>
-      <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=flat-square&logo=javascript&logoColor=%23F7DF1E" alt="JS" /><br/>
-      <img src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=flat-square&logo=typescript&logoColor=white" alt="TS" /><br/>
-      <img src="https://img.shields.io/badge/python-3670A0?style=flat-square&logo=python&logoColor=ffdd54" alt="Python" />
+    <td valign="top" width="50%">
+      <h4>💻 Languages & Frontend</h4>
+      <a href="https://skillicons.dev">
+        <img src="https://skillicons.dev/icons?i=js,ts,python,html,css,react,nextjs,tailwind,bootstrap,gsap" alt="Languages & Frontend" />
+      </a>
     </td>
-    <td valign="top" width="25%">
-      <h4>🎨 Frontend</h4>
-      <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=flat-square&logo=html5&logoColor=white" alt="HTML5" /><br/>
-      <img src="https://img.shields.io/badge/css3-%231572B6.svg?style=flat-square&logo=css3&logoColor=white" alt="CSS3" /><br/>
-      <img src="https://img.shields.io/badge/react-%2320232a.svg?style=flat-square&logo=react&logoColor=%2361DAFB" alt="React" /><br/>
-      <img src="https://img.shields.io/badge/next.js-%23000000.svg?style=flat-square&logo=nextdotjs&logoColor=white" alt="Next.js" /><br/>
-      <img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=flat-square&logo=tailwind-css&logoColor=white" alt="TailwindCSS" />
+    <td valign="top" width="50%">
+      <h4>⚙️ Backend & Databases</h4>
+      <a href="https://skillicons.dev">
+        <img src="https://skillicons.dev/icons?i=nodejs,express,mongodb,firebase,postgres,supabase" alt="Backend & Databases" />
+      </a>
     </td>
-    <td valign="top" width="25%">
-      <h4>⚙️ Backend & Tools</h4>
-      <img src="https://img.shields.io/badge/firebase-%23039BE5.svg?style=flat-square&logo=firebase&logoColor=ffcd34" alt="Firebase" /><br/>
-      <img src="https://img.shields.io/badge/git-%23F05033.svg?style=flat-square&logo=git&logoColor=white" alt="Git" /><br/>
-      <img src="https://img.shields.io/badge/github-%23121011.svg?style=flat-square&logo=github&logoColor=white" alt="GitHub" /><br/>
-      <img src="https://img.shields.io/badge/figma-%23F24E1E.svg?style=flat-square&logo=figma&logoColor=white" alt="Figma" /><br/>
-      <img src="https://img.shields.io/badge/vercel-%23000000.svg?style=flat-square&logo=vercel&logoColor=white" alt="Vercel" />
+  </tr>
+  <tr>
+    <td valign="top" width="50%">
+      <h4>🛡️ Cybersecurity & Systems</h4>
+      <a href="https://skillicons.dev">
+        <img src="https://skillicons.dev/icons?i=linux,bash,c" alt="Cybersecurity & Systems" />
+      </a>
+      <br/><br/>
+      <img src="https://img.shields.io/badge/Cisco_Packet_Tracer-12A5F4?style=flat-square&logo=cisco&logoColor=white" alt="Cisco" height="22" />
+      &nbsp;
+      <img src="https://img.shields.io/badge/Wireshark-167EBA?style=flat-square&logo=wireshark&logoColor=white" alt="Wireshark" height="22" />
     </td>
-    <td valign="top" width="25%">
-      <h4>🛡️ Cyber & OS</h4>
-      <img src="https://img.shields.io/badge/linux-%23FCC624.svg?style=flat-square&logo=linux&logoColor=black" alt="Linux" /><br/>
-      <img src="https://img.shields.io/badge/cisco-%2312A5F4.svg?style=flat-square&logo=cisco&logoColor=white" alt="Cisco" /><br/>
-      <img src="https://img.shields.io/badge/Wireshark-%23167EBA.svg?style=flat-square&logo=wireshark&logoColor=white" alt="Wireshark" />
+    <td valign="top" width="50%">
+      <h4>🛠️ Development Tools</h4>
+      <a href="https://skillicons.dev">
+        <img src="https://skillicons.dev/icons?i=git,github,figma,postman,vscode,vercel,vite" alt="Development Tools" />
+      </a>
     </td>
   </tr>
 </table>
@@ -90,6 +105,7 @@ Instead of commit volume, my focus is on **writing clean, modular code** in mode
 
 ---
 
+<!--
 ### 🎮 Anime Battle Arena
 > Pick your fighter and play my custom interactive mini-game directly in your browser!
 
@@ -105,6 +121,7 @@ Instead of commit volume, my focus is on **writing clean, modular code** in mode
 </p>
 
 ---
+-->
 
 ### 🎵 Coding Soundtrack
 Here's what I'm currently listening to on Spotify while building apps:
@@ -128,19 +145,6 @@ This retro board is compiled daily by a custom GitHub Action workflow, transform
   </picture>
 </p>
 
----
-
-### 🌐 Connect with Me
-
-<p align="center">
-  <a href="https://www.linkedin.com/in/krati-verma-20351a270/">
-    <img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-  </a>
-  &nbsp;&nbsp;
-  <a href="mailto:krat2510@gmail.com">
-    <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail" />
-  </a>
-</p>
 
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=Krati-orbit&icon=0&color=0552fc" alt="Visitor Count" />

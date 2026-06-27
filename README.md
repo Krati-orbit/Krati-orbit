@@ -31,13 +31,19 @@
     </td>
     <td valign="top" width="45%" align="center">
       <img src="matrix_stats.svg" width="100%" alt="Cyber Stats Terminal" />
-      <br/><br/>
-      <img src="https://github-readme-stats.vercel.app/api?username=Krati-orbit&show_icons=true&theme=matrix&hide_border=false" width="100%" alt="GitHub Stats" />
-      <br/><br/>
-      <img src="https://github-readme-streak-stats.herokuapp.com/?user=Krati-orbit&theme=matrix&hide_border=false" width="100%" alt="GitHub Streak" />
     </td>
   </tr>
 </table>
+
+---
+
+### 📊 GitHub Activity
+
+<p align="center">
+  <img src="https://github-readme-stats.shion.dev/api?username=Krati-orbit&show_icons=true&theme=matrix&bg_color=050a06&border_color=00ff66&title_color=33ff77&icon_color=00ff66&text_color=88b598&hide_border=false" width="48%" alt="GitHub Stats" />
+  &nbsp;&nbsp;
+  <img src="https://streak-stats.demolab.com/?user=Krati-orbit&theme=matrix&background=050a06&border=00ff66&ring=00ff66&fire=00ff66&currStreakNum=00ff66&sideNums=00ff66&sideLabels=88b598&dates=88b598&hide_border=false" width="48%" alt="GitHub Streak" />
+</p>
 
 ---
 
@@ -45,40 +51,36 @@
 
 To keep my profile clean and high-impact, here are the core technologies I specialize in:
 
-<table>
-  <tr>
-    <td valign="top" width="50%">
-      <h4>💻 Languages & Frontend</h4>
-      <a href="https://skillicons.dev">
-        <img src="https://skillicons.dev/icons?i=js,ts,python,html,css,react,nextjs,tailwind,bootstrap,gsap" alt="Languages & Frontend" />
-      </a>
-    </td>
-    <td valign="top" width="50%">
-      <h4>⚙️ Backend & Databases</h4>
-      <a href="https://skillicons.dev">
-        <img src="https://skillicons.dev/icons?i=nodejs,express,mongodb,firebase,postgres,supabase" alt="Backend & Databases" />
-      </a>
-    </td>
-  </tr>
-  <tr>
-    <td valign="top" width="50%">
-      <h4>🛡️ Cybersecurity & Systems</h4>
-      <a href="https://skillicons.dev">
-        <img src="https://skillicons.dev/icons?i=linux,bash,c" alt="Cybersecurity & Systems" />
-      </a>
-      <br/><br/>
-      <img src="https://img.shields.io/badge/Cisco_Packet_Tracer-12A5F4?style=flat-square&logo=cisco&logoColor=white" alt="Cisco" height="22" />
-      &nbsp;
-      <img src="https://img.shields.io/badge/Wireshark-167EBA?style=flat-square&logo=wireshark&logoColor=white" alt="Wireshark" height="22" />
-    </td>
-    <td valign="top" width="50%">
-      <h4>🛠️ Development Tools</h4>
-      <a href="https://skillicons.dev">
-        <img src="https://skillicons.dev/icons?i=git,github,figma,postman,vscode,vercel,vite" alt="Development Tools" />
-      </a>
-    </td>
-  </tr>
-</table>
+#### 💻 Languages & Frontend
+<a href="https://skillicons.dev">
+  <img src="https://skillicons.dev/icons?i=js,ts,python,html,css,react,nextjs,tailwind,bootstrap,gsap" alt="Languages & Frontend" />
+</a>
+
+<br/>
+
+#### ⚙️ Backend & Databases
+<a href="https://skillicons.dev">
+  <img src="https://skillicons.dev/icons?i=nodejs,express,mongodb,firebase,postgres,supabase" alt="Backend & Databases" />
+</a>
+
+<br/>
+
+#### 🛡️ Cybersecurity & Systems
+<a href="https://skillicons.dev">
+  <img src="https://skillicons.dev/icons?i=linux,bash,c" alt="Cybersecurity & Systems" />
+</a>
+<p align="left" style="margin-top: 10px;">
+  <img src="https://img.shields.io/badge/Cisco_Packet_Tracer-12A5F4?style=for-the-badge&logo=cisco&logoColor=white" alt="Cisco" />
+  &nbsp;&nbsp;
+  <img src="https://img.shields.io/badge/Wireshark-167EBA?style=for-the-badge&logo=wireshark&logoColor=white" alt="Wireshark" />
+</p>
+
+<br/>
+
+#### 🛠️ Development Tools
+<a href="https://skillicons.dev">
+  <img src="https://skillicons.dev/icons?i=git,github,figma,postman,vscode,vercel,vite" alt="Development Tools" />
+</a>
 
 ---
 

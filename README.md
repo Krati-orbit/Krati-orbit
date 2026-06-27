@@ -45,6 +45,10 @@
   <img src="https://streak-stats.demolab.com/?user=Krati-orbit&theme=matrix&background=050a06&border=00ff66&ring=00ff66&fire=00ff66&currStreakNum=00ff66&sideNums=00ff66&sideLabels=88b598&dates=88b598&hide_border=false" width="48%" alt="GitHub Streak" />
 </p>
 
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Krati-orbit&bg_color=050a06&color=33ff77&line=00ff66&point=33ff77&area=true&area_color=0d301d&border_color=00ff66&hide_border=false" width="98%" alt="GitHub Activity Graph" />
+</p>
+
 ---
 
 ### 🛠️ Tech Stack & Skills

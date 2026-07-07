@@ -59,6 +59,20 @@
     canvas {
       background-color: #111;
       image-rendering: pixelated;
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    #canvas-container {
+      width: 100%;
+      max-width: 330px;
+    }
+    button, canvas, [onclick], [ontouchstart] {
+      -webkit-tap-highlight-color: transparent;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      user-select: none;
+      touch-action: manipulation;
     }
   </style>
 </head>
@@ -124,8 +138,8 @@
       </div>
 
       <!-- Canvas Frame -->
-      <div id="canvas-container" class="relative border-4 rounded-xl overflow-hidden shadow-2xl bg-black">
-        <canvas id="gameCanvas" width="330" height="200" class="block"></canvas>
+      <div id="canvas-container" class="relative w-full max-w-[330px] border-4 rounded-xl overflow-hidden shadow-2xl bg-black">
+        <canvas id="gameCanvas" width="330" height="200" class="block w-full h-auto"></canvas>
         
         <!-- Game Over / Start Overlay -->
         <div id="overlay" class="absolute inset-0 bg-black/85 flex flex-col items-center justify-center hidden p-4 text-center">

@@ -150,9 +150,9 @@ This retro board is compiled daily by a custom GitHub Action workflow, transform
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Krati-orbit/Krati-orbit/output/pacman-contribution-graph-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Krati-orbit/Krati-orbit/output/pacman-contribution-graph.svg">
-    <img alt="Pacman Contribution Graph" src="https://raw.githubusercontent.com/Krati-orbit/Krati-orbit/output/pacman-contribution-graph.svg">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Krati-orbit/Krati-orbit/output/pacman-contribution-graph-dark.svg?v=1">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Krati-orbit/Krati-orbit/output/pacman-contribution-graph.svg?v=1">
+    <img alt="Pacman Contribution Graph" src="https://raw.githubusercontent.com/Krati-orbit/Krati-orbit/output/pacman-contribution-graph.svg?v=1">
   </picture>
 </p>
 

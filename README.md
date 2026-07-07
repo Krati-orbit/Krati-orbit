@@ -40,7 +40,7 @@
 ### 📊 GitHub Activity
 
 <p align="center">
-  <img src="https://github-stats-extended.vercel.app/api?username=Krati-orbit&show_icons=true&theme=matrix&bg_color=050a06&border_color=00ff66&title_color=33ff77&icon_color=00ff66&text_color=88b598&hide_border=false" width="48%" alt="GitHub Stats" />
+  <img src="https://github-stats-extended.vercel.app/api?username=Krati-orbit&show_icons=true&theme=matrix&bg_color=050a06&border_color=00ff66&title_color=33ff77&icon_color=00ff66&text_color=88b598&hide_border=false&include_all_commits=true&count_private=true" width="48%" alt="GitHub Stats" />
   &nbsp;&nbsp;
   <img src="https://streak-stats.demolab.com/?user=Krati-orbit&theme=matrix&background=050a06&border=00ff66&ring=00ff66&fire=00ff66&currStreakNum=00ff66&sideNums=00ff66&sideLabels=88b598&dates=88b598&hide_border=false" width="48%" alt="GitHub Streak" />
 </p>

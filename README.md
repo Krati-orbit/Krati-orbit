@@ -97,10 +97,10 @@ Highlighting my actual code and live deployments so you can see my work directly
 | **Cognitive Developer Dashboard & Profiler**<br>Built with React, TypeScript, and TailwindCSS. Uses Gemini AI to perform developer telemetry audits, score evaluations, and job matching. | **Secure Digital Will & Legacy Vault**<br>Built with React, GSAP, and Firebase. Features AES-256 client-side encryption, Two-Factor Authentication (2FA), beneficiary management, and a Deadman's Switch check-in system. |
 | 🔗 [Live Demo](https://github-analyzer-silk-two.vercel.app) \| [Code](https://github.com/Krati-orbit/github-analyzer) | 🔗 [Live Demo](https://red-boxx.web.app) \| [Code](https://github.com/Krati-orbit/red-box-app) |
 
-| 🚨 [HackerAlert Bot](https://github.com/Krati-orbit/Hackeralert-Bot) | ⚖️ [LawBot (Dharma AI)](https://github.com/Krati-orbit/lawbot) |
+| 🚨 [HackerAlert Bot](https://github.com/Krati-orbit/Hackeralert-Bot) | ⚖️ [LawBot 360](https://github.com/Krati-orbit/lawbot) |
 | :--- | :--- |
-| **Automated Vulnerability Monitoring & Alerting Bot**<br>Built with Python. Parses threat feeds, monitors network activity, and dispatches real-time critical security alerts to Discord/Telegram webhooks. | **AI-Powered Legal Assistant & Spiritual Q&A**<br>Built with React, Express, MongoDB, and Firebase. Implements Q&A search over regional penal codes and ancient texts like the Bhagavad Gita. |
-| 🔗 [Code](https://github.com/Krati-orbit/Hackeralert-Bot) | 🔗 [Code](https://github.com/Krati-orbit/lawbot) |
+| **Automated Vulnerability Monitoring & Alerting Bot**<br>Built with Python. Parses threat feeds, monitors network activity, and dispatches real-time critical security alerts to Discord/Telegram webhooks. | **Your Personal Legal Assistant**<br>Built with React and Firebase. Democratizes justice for every Indian by offering instant AI legal advice, document drafting (RTIs, FIRs), and IPC/BNS legal intelligence in regional languages. |
+| 🔗 [Code](https://github.com/Krati-orbit/Hackeralert-Bot) | 🔗 [Live Demo](https://lawbot360.web.app/) \| [Code](https://github.com/Krati-orbit/lawbot) |
 
 ---
 
